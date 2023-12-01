@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📗 Table of Contents
 
-## Available Scripts
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Linters](#linters)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-In the project directory, you can run:
+# 📖 **Full_Stack_Capstone_Front_End** <a name="about-project"></a>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Built With <a name="built-with"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<a href="https://github.com/JavierAybar/hello-rails-back-end/tree/rails-api">See the Rails Application</a>
 
-### `npm test`
+- HTML
+- CSS
+- JavaScript
+- React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Key Features <a name="key-features"></a>
 
-### `npm run build`
+## 💻 Getting Started <a name="getting-started"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone git@github.com:JavierAybar/Full_Stack_Capstone_Front_End.git
+   cd Full_Stack_Capstone_Front_End
+   code . 
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Customize as needed.
 
-### `npm run eject`
+### Commands
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **npm start:** Run the app in development mode.
+- **npm test:** Launch the test runner.
+- **npm run build:** Build the app for production.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Linters <a name="linters"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- CSS Checker:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  ```bash
+  npx stylelint "**/*.{css,scss}" --fix
+  ```
 
-## Learn More
+- ESLint Checker:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```bash
+  npx eslint "**/*.{js,jsx}" --fix
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- AUTHORS -->
 
-### Code Splitting
+## 👥 Authors <a name="authors"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤 **Javier Aybar**
 
-### Analyzing the Bundle Size
+- GitHub: [@JavierAybar](https://github.com/JavierAybar)
+- LinkedIn: [@JavierAybar](https://www.linkedin.com/in/javier-aybar-932376274/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Marc Raphael**
 
-### Making a Progressive Web App
+- GitHub: [@Marcraphael12](https://github.com/Marcraphael12)
+- Twitter: [@MarcRaphael20](https://twitter.com/MarcRaphael20)
+- LinkedIn: [Marc Raphael](http://linkedin.com/in/marc-raphael-326039204)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+👤 **Reza Merzaie**
 
-### Advanced Configuration
+- GitHub: [@Gh-Reza](https://github.com/Gh-Reza)
+- Twitter: [@RezaMerzie](https://twitter.com/RezaMerzaie7)
+- LinkedIn: [@RezaMerzie](https://www.linkedin.com/in/reza-merzaie)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+👤 Abdelaziz Ali
 
-### Deployment
+- GitHub: [@Abdelaziz-Ali](https://github.com/Abdelaziz-Ali)
+- Twitter: [@AbdelazizDV](https://twitter.com/AbdelazizDV)
+- LinkedIn: [in/abdelaziz-mahdi](https://www.linkedin.com/in/abdelaziz-mahdi)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+👤 **Nurbol Sultanov**
 
-### `npm run build` fails to minify
+- GitHub: [@everinurmind](https://github.com/everinurmind)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/everinurmind/)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Implement CRUD functionality**: Develop a comprehensive CRUD (Create, Read, Update, Delete) application, enabling efficient management and manipulation of message data within the system.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to Microverse.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
