@@ -5,6 +5,7 @@ export const fetchVehicleDetails = createAsyncThunk(
   async (vehicleId) => {
     const response = await fetch(`http://localhost:3000/api/v1/vehicles/${vehicleId}`);
     const data = await response.json();
+    // console.log(data);
     return data;
   },
 );
