@@ -1,33 +1,27 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'http://localhost:3000/';
+const url = 'http://localhost:3000/api/v1/vehicles';
 
-export const fetchVehicles = createAsyncThunk('vehicles/fetchVehicles', async (_, { rejectWithValue }) => {
-  try {
-    const response = await axios.get(`${url}api/v1/vehicles`);
-    return response.data;
-  } catch (error) {
-    return rejectWithValue(error.vehicles);
-  }
+export const fetchVehicles = createAsyncThunk('vehicles/fetchVehicles', async () => {
+  const response = await axios.get(url);
+  return response.data;
 });
 
 const initialState = {
-  vehicles: [],
+  vehicle: [],
   isLoading: true,
 };
 
 const vehiclesSlice = createSlice({
-  name: 'vehicles',
+  name: 'vehicle',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(fetchVehicles.fulfilled, (state, action) => {
-        state.vehicles = action.payload.vehicles;
-        state.isLoading = false;
-        console.log(state.vehicles);
-      });
+    builder.addCase(fetchVehicles.fulfilled, (state, action) => ({
+      ...state,
+      vehicle: action.payload,
+    }));
   },
 });
 
