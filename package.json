@@ -21,7 +21,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "react-spinners-kit": "^1.9.1",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
     "swiper": "^11.0.5",
     "web-vitals": "^2.1.4"
   },
