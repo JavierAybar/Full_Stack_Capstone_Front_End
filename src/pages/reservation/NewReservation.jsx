@@ -60,7 +60,9 @@ function AddReservationPage() {
         <h2>Test Drive</h2>
         {/* Form Description */}
         <p>
-          Schedule a test drive today to immerse yourself in the exhilarating experience of driving a high-performance vehicle! We'll reach out to you promptly to confirm your reservation and bring your dream drive to life.
+          Schedule a test drive today to immerse yourself in the exhilarating
+          experience of driving a high-performance vehicle! We&apos;ll reach out to you
+          promptly to confirm your reservation and bring your dream drive to life.
         </p>
         {/* Form Inputs */}
         <div>
@@ -70,7 +72,7 @@ function AddReservationPage() {
             type="text"
             name="city"
             placeholder="City"
-            {...register('city', { required: true })}
+            ref={register('city', { required: true })}
           />
           {/* Date Input with Calendar Icon */}
           <div>
@@ -79,7 +81,7 @@ function AddReservationPage() {
               type="date"
               name="date"
               placeholder="Date"
-              {...register('date', { required: true })}
+              ref={register('date', { required: true })}
               min={new Date().toISOString().split('T')[0]}
             />
             <BsCalendar2Week />
@@ -88,7 +90,7 @@ function AddReservationPage() {
           <select
             required
             name="vehicle_id"
-            {...register('vehicle_id', { required: true })}
+            ref={register('vehicle_id', { required: true })}
           >
             <option value="">Select a vehicle</option>
             {/* Mapping through vehicles to populate dropdown options */}

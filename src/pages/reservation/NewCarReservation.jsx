@@ -42,7 +42,7 @@ function AddReservationPage() {
           <h2 className="formTitle">Test Drive</h2>
           <p className="formDesc">
             Book your test drive today for a chance to experience the excitement
-            of driving a supercar! We'll get in touch with you to confirm
+            of driving a supercar! We&apos;ll get in touch with you to confirm
             your reservation and make it happen.
           </p>
 
@@ -51,7 +51,7 @@ function AddReservationPage() {
               type="text"
               name="city"
               placeholder="City"
-              {...register('city', { required: true })}
+              ref={register('city', { required: true })}
               className="formInput"
             />
             <div className="inputDate">
@@ -59,8 +59,8 @@ function AddReservationPage() {
                 type="date"
                 name="date"
                 placeholder="Date"
-                value={new Date().toISOString().split('T')[0]}
-                {...register('date', { required: true })}
+                defaultValue={new Date().toISOString().split('T')[0]}
+                ref={register('date', { required: true })}
                 min={new Date().toISOString().split('T')[0]}
                 className="formInput dateInput"
               />

@@ -3,7 +3,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Provider } from 'react-redux';
-import VehicleDetails from './pages/VehicelDetails';
 import VehicleList from './pages/VehicleList';
 
 import store from './redux/store';
