@@ -1,7 +1,7 @@
-const API_URL = 'http://localhost:3000/api/v1';
+const AUTH_API_URL = 'http://localhost:3000';
 
 const login = async (email, password) => {
-  const response = await fetch(`${API_URL}/users/sign_in`, {
+  const response = await fetch(`${AUTH_API_URL}/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ const login = async (email, password) => {
 };
 
 const register = async (email, password, passwordConfirmation) => {
-  const response = await fetch(`${API_URL}/users`, {
+  const response = await fetch(`${AUTH_API_URL}/signup`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const register = async (email, password, passwordConfirmation) => {
 };
 
 const logout = async () => {
-  const response = await fetch(`${API_URL}/users/sign_out`, {
+  const response = await fetch(`${AUTH_API_URL}/logout`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
