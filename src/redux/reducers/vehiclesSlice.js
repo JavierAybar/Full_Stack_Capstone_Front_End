@@ -10,12 +10,12 @@ export const fetchVehicles = createAsyncThunk('vehicles/fetchVehicles', async ()
 
 export const deleteVehicle = createAsyncThunk('vehicles/deleteVehicle', async (id) => {
   await axios.delete(`${url}/vehicles/${id}`);
-  return id;
 });
 
 const initialState = {
   vehicle: [],
-  isLoading: true,
+  isLoading: false,
+  error: null,
 };
 
 const vehiclesSlice = createSlice({
@@ -24,12 +24,20 @@ const vehiclesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchVehicles.fulfilled, (state, action) => ({
-        ...state,
-        vehicle: action.payload,
-      }))
+      .addCase(fetchVehicles.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchVehicles.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.vehicle = action.payload;
+      })
+      .addCase(fetchVehicles.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
       .addCase(deleteVehicle.fulfilled, (state, action) => {
-        state.vehicle = state.vehicle.filter((vehicle) => vehicle.id !== action.payload);
+        state.vehicle = state.vehicle.filter((vehicle) => vehicle.id !== action.meta.arg);
       });
   },
 });
