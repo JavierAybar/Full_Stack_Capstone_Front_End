@@ -1,23 +1,23 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { BsCalendar2Week } from 'react-icons/bs';
+import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { BsCalendar2Week } from 'react-icons/bs';
-import { fetchVehicleDetails } from '../../redux/vehicle_details/vehicleDetailsSlice';
+import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
 import { addReservation } from '../../redux/reservation/reservSlice';
+import '../../assets/style/NewReservation.css';
 
 function AddReservationPage() {
-  // Hooks
+  // Hooks and state
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const vehicles = useSelector((state) => state.vehicle.data);
-
-  // Get user ID from localStorage
   const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
   const userId = userFromLocalStorage ? userFromLocalStorage.id : null;
 
-  // Form handling with react-hook-form
+  // Form setup using react-hook-form
   const {
     register,
     handleSubmit,
@@ -34,14 +34,13 @@ function AddReservationPage() {
 
   // Fetch vehicles on component mount
   useEffect(() => {
-    dispatch(fetchVehicleDetails()); // Dispatch action to fetch vehicle data
+    dispatch(fetchVehicles());
   }, [dispatch]);
 
-  // Form submission
+  // Form submission handler
   const onSubmit = (formData) => {
-    // Dispatch addReservation action
     dispatch(addReservation(formData)).then(() => {
-      // Reset form fields on successful reservation
+      // Reservation added successfully, reset form fields
       setValue('city', '');
       setValue('date', '');
       setValue('vehicle_id', '');
@@ -52,59 +51,72 @@ function AddReservationPage() {
     });
   };
 
+  // JSX for the component
   return (
-    <div>
+    <div className="formCont reservationCont">
+      {/* Styles */}
+      <style>
+        {`
+          // ... (styles omitted for brevity)
+        `}
+      </style>
+
       {/* Reservation Form */}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {/* Form Heading */}
-        <h2>Test Drive</h2>
-        {/* Form Description */}
-        <p>
-          Schedule a test drive today to immerse yourself in the exhilarating
-          experience of driving a high-performance vehicle! We&apos;ll reach out to you
-          promptly to confirm your reservation and bring your dream drive to life.
+      <form className="reservationForm" onSubmit={handleSubmit(onSubmit)}>
+        <h2 className="formTitle">Test Drive</h2>
+        <p className="formDesc">
+          Schedule your test drive today to embark on an exhilarating experience
+          with our high-performance vehicles! We will promptly confirm your reservation
+          and make your supervehicle dream a reality.
         </p>
-        {/* Form Inputs */}
-        <div>
+        <div className="inputCont">
           {/* City Input */}
           <input
             required
             type="text"
             name="city"
             placeholder="City"
-            ref={register('city', { required: true })}
+            {...register('city', { required: true })}
+            className="formInput"
           />
-          {/* Date Input with Calendar Icon */}
-          <div>
+
+          {/* Date Input */}
+          <div className="inputDate">
             <input
               required
               type="date"
               name="date"
               placeholder="Date"
-              ref={register('date', { required: true })}
+              {...register('date', { required: true })}
               min={new Date().toISOString().split('T')[0]}
+              className="formInput dateInput"
             />
-            <BsCalendar2Week />
+            <BsCalendar2Week className="calendarIcon" />
           </div>
-          {/* Vehicle Selection Dropdown */}
+
+          {/* Vehicle Select */}
           <select
             required
             name="vehicle_id"
-            ref={register('vehicle_id', { required: true })}
+            {...register('vehicle_id', { required: true })}
+            className="formInput formSelect"
           >
-            <option value="">Select a vehicle</option>
-            {/* Mapping through vehicles to populate dropdown options */}
+            <option className="vehicleselector" value="">
+              Select a vehicle
+            </option>
             {vehicles.map((vehicle) => (
-              <option key={vehicle.id} value={vehicle.id}>
+              <option key={vehicle.id} value={vehicle.id} className="vehicleselector">
                 {vehicle.name}
               </option>
             ))}
           </select>
-          {/* Error message for vehicle selection */}
           {errors.vehicle_id && <span>Select Vehicle Model</span>}
         </div>
+
         {/* Submit Button */}
-        <button type="submit">Book Reservation</button>
+        <button type="submit" className="reservationSubmit">
+          Book Reservation
+        </button>
       </form>
     </div>
   );
