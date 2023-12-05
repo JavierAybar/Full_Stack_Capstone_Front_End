@@ -19,8 +19,8 @@ export const logoutUser = createAsyncThunk(
 
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
-  async ({ email, password, passwordConfirmation }) => {
-    const response = await AuthService.register(email, password, passwordConfirmation);
+  async ({ username, email, password, passwordConfirmation }) => {
+    const response = await AuthService.register(username, email, password, passwordConfirmation);
     return response;
   },
 );
@@ -57,10 +57,17 @@ const authSlice = createSlice({
       state.user = null;
       localStorage.removeItem('authToken');
     },
+    [registerUser.pending]: (state) => {
+      state.loading = true;
+    },
     [registerUser.fulfilled]: (state, action) => {
       state.user = action.payload;
       state.error = null;
       localStorage.setItem('authToken', action.payload.token);
+    },
+    [registerUser.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
     },
   },
 });

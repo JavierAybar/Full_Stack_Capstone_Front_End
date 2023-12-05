@@ -5,6 +5,7 @@ import { registerUser } from '../redux/slices/authSlice';
 import Spinner from '../components/Spinner';
 
 const Registration = () => {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
@@ -13,7 +14,7 @@ const Registration = () => {
   const { loading, error } = useSelector((state) => state.auth);
 
   const validateInput = () => {
-    if (!email || !password || !passwordConfirmation) {
+    if (!username || !email || !password || !passwordConfirmation) {
       alert('Please enter all required fields');
       return false;
     }
@@ -31,7 +32,7 @@ const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateInput()) return;
-    dispatch(registerUser({ email, password, passwordConfirmation }))
+    dispatch(registerUser({ username, email, password, passwordConfirmation }))
       .then(() => {
         navigate('/login');
       });
@@ -41,6 +42,12 @@ const Registration = () => {
     <div>
       <h2>Registration</h2>
       <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
+        />
         <input
           type="email"
           value={email}

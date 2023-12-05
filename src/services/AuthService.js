@@ -15,14 +15,14 @@ const login = async (email, password) => {
   return data;
 };
 
-const register = async (email, password, passwordConfirmation) => {
+const register = async (username, email, password, passwordConfirmation) => {
   const response = await fetch(`${AUTH_API_URL}/signup`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      user: { email, password, password_confirmation: passwordConfirmation },
+      user: { username, email, password, password_confirmation: passwordConfirmation },
     }),
   });
   if (!response.ok) {
