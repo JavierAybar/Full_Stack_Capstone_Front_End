@@ -5,14 +5,15 @@ import VehicleDetails from './pages/VehicelDetails';
 import Login from './pages/Login';
 import Registration from './pages/Registration';
 import Logout from './pages/Logout';
+import VehicleList from './pages/VehicleList';
 import store from './redux/store';
 
 function App() {
   return (
-    // <h1>Hello</h1>
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
+          <Route path="/vehicles" element={<VehicleList />} />
           <Route path="/vehicles/:id" element={<VehicleDetails />} />
           <Route path="/login" element={<Login isAuthenticated />} />
           <Route path="/register" element={<Registration isAuthenticated />} />
