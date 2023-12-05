@@ -1,0 +1,38 @@
+.sectionSidbar {
+  width: 250px;
+  padding: 24px;
+  margin: 0;
+  border-right: #ddd 1px solid;
+  height: 100vh;
+}
+
+.logoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logoBox img {
+  width: 80%;
+}
+
+.nav {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+.nav .navItem a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 16px;
+  width: 100%;
+  display: block;
+}
+
+.navItem a.active {
+  background-color: #232221;
+  color: #fff;
+}
