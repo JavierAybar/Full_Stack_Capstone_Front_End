@@ -22,7 +22,9 @@ const register = async (username, email, password, passwordConfirmation) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      user: { username, email, password, password_confirmation: passwordConfirmation },
+      user: {
+        username, email, password, password_confirmation: passwordConfirmation,
+      },
     }),
   });
   if (!response.ok) {

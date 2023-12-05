@@ -32,7 +32,9 @@ const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateInput()) return;
-    dispatch(registerUser({ username, email, password, passwordConfirmation }))
+    dispatch(registerUser({
+      username, email, password, passwordConfirmation,
+    }))
       .then(() => {
         navigate('/login');
       });

@@ -19,7 +19,9 @@ export const logoutUser = createAsyncThunk(
 
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
-  async ({ username, email, password, passwordConfirmation }) => {
+  async ({
+    username, email, password, passwordConfirmation,
+  }) => {
     const response = await AuthService.register(username, email, password, passwordConfirmation);
     return response;
   },
