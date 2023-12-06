@@ -1,5 +1,5 @@
 .sectionSidbar {
-  width: 250px;
+  width: 100%;
   padding: 24px;
   margin: 0;
   border-right: #ddd 1px solid;
@@ -33,6 +33,29 @@
 }
 
 .navItem a.active {
-  background-color: #232221;
+  background-color: #41c219;
   color: #fff;
+}
+
+.iconMed {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.iconBar {
+  width: 24px;
+  height: 24px;
+  position: fixed;
+  top: 24px;
+  left: 24px;
+}
+
+@media (min-width: 768px) {
+  .sectionSidbar {
+    width: 25%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 }

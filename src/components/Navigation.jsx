@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import image from '../assets/mercedes-logo.png';
 import styles from './Navigation.module.css';
 
@@ -11,32 +13,32 @@ const Navigation = () => {
   return state ? (
     <nav className={styles.sectionSidbar}>
       <div className={styles.sideBarIconBox}>
-        <button type="button" onClick={handleClick}>MENU</button>
+        <FontAwesomeIcon onClick={handleClick} icon={faXmark} className={styles.iconMed} />
       </div>
       <div className={styles.logoBox}>
         <img src={image} alt="marcedes logo" />
       </div>
       <ul className={styles.nav}>
         <li className={styles.navItem}>
-          <NavLink to="/vehicles" className={({ isActive }) => (isActive ? styles.active : '')}>Vehicles</NavLink>
+          <NavLink to="/vehicles" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Vehicles</NavLink>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/new-reservation" className={({ isActive }) => (isActive ? styles.active : '')}>Reserve</NavLink>
+          <NavLink to="/new-reservation" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Reserve</NavLink>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/my-reservations" className={({ isActive }) => (isActive ? styles.active : '')}>My reservations</NavLink>
+          <NavLink to="/my-reservations" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>My reservations</NavLink>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/new-vehicle" className={({ isActive }) => (isActive ? styles.active : '')}>Add vehicle</NavLink>
+          <NavLink to="/new-vehicle" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Add vehicle</NavLink>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/delete-vehicle" className={({ isActive }) => (isActive ? styles.active : '')}>Delete vehicle</NavLink>
+          <NavLink to="/delete-vehicle" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Delete vehicle</NavLink>
         </li>
       </ul>
     </nav>
   ) : (
     <div className={styles.sideBarIconBox}>
-      <button type="button" onClick={handleClick}>CLOSE</button>
+      <FontAwesomeIcon onClick={handleClick} icon={faBars} className={`${styles.iconMed} ${styles.iconBar}`} />
     </div>
   );
 };
