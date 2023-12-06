@@ -11,11 +11,13 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Navigation />
-        <Routes>
-          <Route path="/vehicles" element={<VehicleList />} />
-          <Route path="/vehicles/:id" element={<VehicleDetails />} />
-        </Routes>
+        <div className="d-flex">
+          <Navigation />
+          <Routes>
+            <Route path="/vehicles" element={<VehicleList />} />
+            <Route path="/vehicles/:id" element={<VehicleDetails />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </Provider>
   );
