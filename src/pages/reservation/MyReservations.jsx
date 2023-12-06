@@ -4,10 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { SwishSpinner } from 'react-spinners-kit';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Mousewheel, Pagination } from 'swiper';
 import 'swiper/css';
-import 'swiper/css/pagination';
-import '../../assets/style/MyReservations.css';
 
 import { fetchReservations, deleteReservation } from '../../redux/reservation/reservSlice';
 import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
@@ -29,6 +26,7 @@ function UserReservation() {
    */
   useEffect(() => {
     setLoading(true);
+    // Fetch reservations and vehicles and set loading to false when done
     dispatch(fetchReservations())
       .then(() => dispatch(fetchVehicles()))
       .finally(() => setLoading(false));
@@ -72,13 +70,16 @@ function UserReservation() {
   return (
     <div className="myReservationsCont">
       {loading ? (
+        // Display loading spinner while data is being fetched
         <SwishSpinner size="50" frontColor="#98be18" loading />
       ) : userReservations.length === 0 ? (
+        // Display message if the user has no reservations
         <div className="reservationsEmpty">
           <h1>Tests Drive</h1>
           <p>You dont have any Test Drive reservations yet.</p>
         </div>
       ) : (
+        // Display user's Test Drive reservations
         <div className="myReservations">
           <div className="header">
             <h1 className="title">Tests Drive</h1>
@@ -86,10 +87,12 @@ function UserReservation() {
             <div className="divider" />
           </div>
 
-          <Swiper direction="vertical" slidesPerView={1} spaceBetween={30} mousewheel pagination={{ clickable: true }} modules={[Mousewheel, Pagination]} className="reservationSwiper">
+          {/* Swiper component to display user's Test Drive reservations */}
+          <Swiper direction="vertical" slidesPerView={1} spaceBetween={30} className="reservationSwiper">
             {userReservations.map((reservation) => (
               <SwiperSlide className="reservationSlide" key={reservation.id}>
                 <div className="reservationInfo">
+                  {/* Display vehicle information for each reservation */}
                   {['Model', 'City', 'Date'].map((attr) => (
                     <div className="reservationAttr" key={attr}>
                       <p className="attrName">
@@ -100,7 +103,9 @@ function UserReservation() {
                     </div>
                   ))}
                 </div>
+                {/* Display vehicle image for each reservation */}
                 <div className={`vehicleImg vehicleImg${reservation.vehicle_id}`} />
+                {/* Style for vehicle image and additional information */}
                 <style>
                   {`
                     .vehicleImg${reservation.vehicle_id} {
@@ -119,7 +124,12 @@ function UserReservation() {
                     }
                   `}
                 </style>
-                <button type="submit" className="cancelReservationBtn" onClick={() => confirmDelete(reservation.id, getVehicleProperty(reservation.vehicle_id, 'name'))}>
+                {/* Button to cancel reservation */}
+                <button
+                  type="submit"
+                  className="cancelReservationBtn"
+                  onClick={() => confirmDelete(reservation.id, getVehicleProperty(reservation.vehicle_id, 'name'))}
+                >
                   Cancel Reservation
                 </button>
               </SwiperSlide>

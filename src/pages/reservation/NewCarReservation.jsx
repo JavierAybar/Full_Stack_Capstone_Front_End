@@ -2,17 +2,16 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-hot-toast';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { useForm } from 'react-hook-form';
-import '../../assets/style/NewReservation.css';
 import { BsCalendar2Week } from 'react-icons/bs';
 
 import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
 import { addReservation } from '../../redux/reservation/reservSlice';
 
 function AddReservationPage() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { carId } = useParams();
   const dispatch = useDispatch();
 
@@ -36,7 +35,7 @@ function AddReservationPage() {
       // Show a success toast message
       toast.success('Reservation added successfully!');
       // Redirect to "My Reservations"
-      navigate('/my-reservations');
+      // navigate('/my-reservations');
     });
   };
 

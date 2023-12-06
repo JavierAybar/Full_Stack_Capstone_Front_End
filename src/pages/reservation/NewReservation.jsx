@@ -1,19 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { BsCalendar2Week } from 'react-icons/bs';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
 import { addReservation } from '../../redux/reservation/reservSlice';
-import '../../assets/style/NewReservation.css';
 
 function AddReservationPage() {
   // Hooks and state
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const dispatch = useDispatch();
-  const vehicles = useSelector((state) => state.vehicle.data);
+  // const vehicles = useSelector((state) => state.vehicle.data);
   const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
   const userId = userFromLocalStorage ? userFromLocalStorage.id : null;
 
@@ -47,7 +46,7 @@ function AddReservationPage() {
       // Show a success toast message
       toast.success('Reservation added successfully!');
       // Redirect to "My Reservations"
-      navigate('/my-reservations');
+      // navigate('/my-reservations');
     });
   };
 
@@ -104,11 +103,11 @@ function AddReservationPage() {
             <option className="vehicleselector" value="">
               Select a vehicle
             </option>
-            {vehicles.map((vehicle) => (
+            {/* {vehicles.map((vehicle) => (
               <option key={vehicle.id} value={vehicle.id} className="vehicleselector">
                 {vehicle.name}
               </option>
-            ))}
+            ))} */}
           </select>
           {errors.vehicle_id && <span>Select Vehicle Model</span>}
         </div>
