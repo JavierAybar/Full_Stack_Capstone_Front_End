@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Registration from './pages/Registration';
 import Logout from './pages/Logout';
 import VehicleList from './pages/VehicleList';
+import DeleteVehicle from './pages/DeleteVehicle';
 import store from './redux/store';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/vehicles" element={<VehicleList />} />
           <Route path="/vehicles/:id" element={<VehicleDetails />} />
+          <Route path="/delete" element={<DeleteVehicle />} />
           <Route path="/login" element={<Login isAuthenticated />} />
           <Route path="/register" element={<Registration isAuthenticated />} />
           <Route path="/logout" element={<Logout isAuthenticated />} />
