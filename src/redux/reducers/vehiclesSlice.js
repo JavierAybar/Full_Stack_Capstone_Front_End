@@ -5,7 +5,7 @@ const url = 'http://127.0.0.1:3000/api/v1';
 
 export const fetchVehicles = createAsyncThunk('vehicles/fetchVehicles', async () => {
   const response = await axios.get(`${url}/vehicles`);
-  return response;
+  return response.data;
 });
 
 export const deleteVehicle = createAsyncThunk('vehicles/deleteVehicle', async (id) => {

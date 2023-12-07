@@ -12,7 +12,7 @@ function AddReservationPage() {
   // Hooks and state
   // const navigate = useNavigate();
   const dispatch = useDispatch();
-  const vehicles = useSelector((state) => state.vehicle.vehicle.data);
+  const vehicles = useSelector((state) => state.vehicle.vehicle);
   console.log(vehicles);
   const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
   const userId = userFromLocalStorage ? userFromLocalStorage.id : 1;
