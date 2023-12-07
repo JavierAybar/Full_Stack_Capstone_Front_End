@@ -14,7 +14,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className="d-flex">
+        <div className="">
           <Navigation />
           <Routes>
             <Route path="/vehicles" element={<VehicleList />} />
