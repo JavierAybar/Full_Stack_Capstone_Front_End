@@ -5,6 +5,7 @@
   border-right: #ddd 1px solid;
   height: 100vh;
   background-color: #ffffffdd;
+  z-index: 999;
 }
 
 .logoBox {
