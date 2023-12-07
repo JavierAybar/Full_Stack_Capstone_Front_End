@@ -9,8 +9,7 @@ export const fetchReservations = createAsyncThunk(
   'reservation/fetchReservations',
   async () => {
     const response = await axios.get(apiURL);
-    const data = await response.json(); // Assuming your API response directly contains the reservation data
-    return data;
+    return response.data;
   },
 );
 
@@ -36,8 +35,9 @@ export const deleteReservation = createAsyncThunk(
 
 // Initial state
 const initialState = {
-  details: {},
-  status: 'loading',
+  reservations: [],
+  isLoading: false,
+  error: null,
 };
 
 // Slice

@@ -15,8 +15,9 @@ import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
  */
 function UserReservation() {
   const dispatch = useDispatch();
-  const reservations = useSelector((state) => state.reservation.data);
-  const vehicles = useSelector((state) => state.vehicle.data);
+  const reservations = useSelector((state) => state.reservation);
+  console.log(reservations);
+  const vehicles = useSelector((state) => state.vehicle.vehicle.data);
   const authUser = useSelector((state) => state.auth.user);
   const [loading, setLoading] = useState(true);
 

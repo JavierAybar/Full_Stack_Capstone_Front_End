@@ -9,6 +9,8 @@ import Registration from './pages/Registration';
 import Logout from './pages/Logout';
 import VehicleList from './pages/VehicleList';
 import DeleteVehicle from './pages/DeleteVehicle';
+import NewReservation from './pages/reservation/NewReservation';
+import MyReservations from './pages/reservation/MyReservations';
 import store from './redux/store';
 import Navigation from './components/Navigation';
 
@@ -25,6 +27,8 @@ function App() {
             <Route path="/login" element={<Login isAuthenticated />} />
             <Route path="/register" element={<Registration isAuthenticated />} />
             <Route path="/logout" element={<Logout isAuthenticated />} />
+            <Route path="/new-reservation" element={<NewReservation />} />
+            <Route path="/my-reservations" element={<MyReservations />} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'http://localhost:3000/api/v1';
+const url = 'http://127.0.0.1:3000/api/v1';
 
 export const fetchVehicles = createAsyncThunk('vehicles/fetchVehicles', async () => {
   const response = await axios.get(`${url}/vehicles`);
-  return response.data;
+  return response;
 });
 
 export const deleteVehicle = createAsyncThunk('vehicles/deleteVehicle', async (id) => {

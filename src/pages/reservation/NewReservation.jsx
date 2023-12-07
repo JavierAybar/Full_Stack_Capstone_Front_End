@@ -12,10 +12,10 @@ function AddReservationPage() {
   // Hooks and state
   // const navigate = useNavigate();
   const dispatch = useDispatch();
-  const vehicles = useSelector((state) => state.vehicle.vehicle);
+  const vehicles = useSelector((state) => state.vehicle.vehicle.data);
   console.log(vehicles);
   const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
-  const userId = userFromLocalStorage ? userFromLocalStorage.id : null;
+  const userId = userFromLocalStorage ? userFromLocalStorage.id : 1;
 
   // Form setup using react-hook-form
   const {
