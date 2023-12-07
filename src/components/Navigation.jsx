@@ -32,7 +32,7 @@ const Navigation = () => {
           <NavLink to="/new-vehicle" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Add vehicle</NavLink>
         </li>
         <li className={styles.navItem}>
-          <NavLink to="/delete-vehicle" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Delete vehicle</NavLink>
+          <NavLink to="/delete" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Delete vehicle</NavLink>
         </li>
       </ul>
     </nav>
