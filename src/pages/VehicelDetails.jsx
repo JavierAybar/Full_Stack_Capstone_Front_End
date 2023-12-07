@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronRight, faGear } from '@fortawesome/free-solid-svg-icons';
 import { fetchVehicleDetails } from '../redux/vehicle_details/vehicleDetailsSlice';
 import styles from './VehicleDetails.module.css';
-import image from '../assets/mercedes.png';
 
 const VehicleDetails = () => {
   const { id } = useParams();
@@ -20,7 +19,7 @@ const VehicleDetails = () => {
     <div className="container pt-5">
       <div className={styles.detailsContainer}>
         <div className={styles.imageContainer}>
-          <img src={image} alt="vehicle" className="img-fluid" />
+          <img src={vehicleDetails.image} alt="vehicle" className="img-fluid" />
         </div>
         <div className={styles.vehicleDetailsContainer}>
           <div className={styles.detailsBox}>
