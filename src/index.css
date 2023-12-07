@@ -38,9 +38,33 @@ html {
   }
 }
 
+.swiper-button-next {
+  right: var(--swiper-navigation-sides-offset, -20px) !important;
+  left: auto;
+}
+
+.swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, -20px) !important;
+  right: auto;
+}
+
+.swiper-button-next svg {
+  width: 12px !important;
+  height: 12px !important;
+  margin-right: auto;
+  margin-left: 8px;
+}
+
+.swiper-button-prev svg {
+  width: 12px !important;
+  height: 12px !important;
+  margin-right: 8px;
+  margin-left: auto;
+}
+
 .container {
-  max-width: 124rem;
-  padding: 4rem 1rem;
+  max-width: 100vw;
+  padding: 0;
   margin: 0 auto;
 }
 
@@ -57,7 +81,7 @@ html {
 }
 
 .swiper-slide {
-  width: 37rem;
+  width: 480px !important;
   height: 42rem;
   position: relative;
   align-items: center;
@@ -69,12 +93,14 @@ html {
   }
 
   .swiper-slide {
-    width: 28rem !important;
+    width: 100vw !important;
     height: 36rem !important;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 
   .swiper-slide img {
-    width: 28rem !important;
+    width: 100vw !important;
   }
 }
 
@@ -94,14 +120,14 @@ html {
 }
 
 .slider-controler .swiper-button-next {
-  height: 25px;
-  width: 70px;
+  height: 35px;
+  width: 80px;
   padding-left: 6px;
 }
 
 .slider-controler .swiper-button-prev {
-  height: 25px;
-  width: 70px;
+  height: 35px;
+  width: 80px;
   padding-right: 6px;
 }
 
