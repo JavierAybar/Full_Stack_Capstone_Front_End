@@ -1,0 +1,61 @@
+.sectionSidbar {
+  width: 100%;
+  padding: 24px;
+  margin: 0;
+  border-right: #ddd 1px solid;
+  height: 100vh;
+}
+
+.logoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logoBox img {
+  width: 80%;
+}
+
+.nav {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+.nav .navItem a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 16px;
+  width: 100%;
+  display: block;
+}
+
+.navItem a.active {
+  background-color: #41c219;
+  color: #fff;
+}
+
+.iconMed {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.iconBar {
+  width: 24px;
+  height: 24px;
+  position: fixed;
+  top: 24px;
+  left: 24px;
+}
+
+@media (min-width: 768px) {
+  .sectionSidbar {
+    width: 25%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
