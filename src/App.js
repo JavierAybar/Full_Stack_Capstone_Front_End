@@ -7,14 +7,14 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import NewReservation from './pages/reservation/NewReservation';
 import NewCarReservation from './pages/reservation/NewCarReservation';
-import MyReservations from './pages/reservation/MyReservations';
+// import MyReservations from './pages/reservation/MyReservations';
 
 function App() {
   return (
     <Provider store={store}>
       <NewReservation />
       <NewCarReservation />
-      <MyReservations />
+      {/* <MyReservations /> */}
     </Provider>
   );
 }

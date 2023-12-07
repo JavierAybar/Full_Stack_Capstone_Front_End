@@ -15,7 +15,7 @@ import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
  */
 function UserReservation() {
   const dispatch = useDispatch();
-  const reservations = useSelector((state) => state.reserv.data);
+  const reservations = useSelector((state) => state.reservation.data);
   const vehicles = useSelector((state) => state.vehicle.data);
   const authUser = useSelector((state) => state.auth.user);
   const [loading, setLoading] = useState(true);
@@ -72,12 +72,6 @@ function UserReservation() {
       {loading ? (
         // Display loading spinner while data is being fetched
         <SwishSpinner size="50" frontColor="#98be18" loading />
-      ) : userReservations.length === 0 ? (
-        // Display message if the user has no reservations
-        <div className="reservationsEmpty">
-          <h1>Tests Drive</h1>
-          <p>You dont have any Test Drive reservations yet.</p>
-        </div>
       ) : (
         // Display user's Test Drive reservations
         <div className="myReservations">

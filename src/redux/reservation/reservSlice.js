@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -7,38 +8,36 @@ const apiURL = 'http://127.0.0.1:3000/api/v1/reservations/';
 export const fetchReservations = createAsyncThunk(
   'reservation/fetchReservations',
   async () => {
-    const response = await axios.get(`${apiURL}`);
-    return response.data; // Assuming your API response directly contains the reservation data
+    const response = await axios.get(apiURL);
+    const data = await response.json(); // Assuming your API response directly contains the reservation data
+    return data;
   },
 );
 
 export const addReservation = createAsyncThunk(
   'reservation/addReservation',
   async (formData) => {
-    const response = await axios.post(`${apiURL}`, {
+    const response = await axios.post(apiURL, {
       reservation: formData,
     }); // Assuming your API expects the reservation data wrapped in "reservation" object
-    return response.data; // Assuming your API response directly contains the added reservation data
+    const data = await response.json();
+    return data;
   },
 );
 
 export const deleteReservation = createAsyncThunk(
   'reservation/deleteReservation',
   async (reservId) => {
-    await axios.delete(`${apiURL}${reservId}`);
-    return reservId; // Return the deleted reservation's ID to update the state
+    const response = await axios.delete(apiURL + reservId);
+    const data = await response.json();
+    return data;
   },
 );
 
 // Initial state
 const initialState = {
-  data: {
-    name: 'a name',
-    date: 'a date',
-    city: 'a city',
-  },
-  status: 'idle',
-  error: null,
+  details: {},
+  status: 'loading',
 };
 
 // Slice

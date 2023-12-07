@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BsCalendar2Week } from 'react-icons/bs';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -12,7 +12,8 @@ function AddReservationPage() {
   // Hooks and state
   // const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const vehicles = useSelector((state) => state.vehicle.data);
+  const vehicles = useSelector((state) => state.vehicle.vehicle);
+  console.log(vehicles);
   const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
   const userId = userFromLocalStorage ? userFromLocalStorage.id : null;
 
@@ -103,11 +104,11 @@ function AddReservationPage() {
             <option className="vehicleselector" value="">
               Select a vehicle
             </option>
-            {/* {vehicles.map((vehicle) => (
+            {vehicles.map((vehicle) => (
               <option key={vehicle.id} value={vehicle.id} className="vehicleselector">
                 {vehicle.name}
               </option>
-            ))} */}
+            ))}
           </select>
           {errors.vehicle_id && <span>Select Vehicle Model</span>}
         </div>
