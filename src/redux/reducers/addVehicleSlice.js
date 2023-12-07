@@ -4,7 +4,7 @@ import axios from 'axios';
 const mainURL = 'http://localhost:3000';
 export const addNewVehicle = createAsyncThunk('car/addNewVehicle', async (formData) => {
   const response = await axios.post(`${mainURL}/api/v1/vehicles/`, {
-    car: formData,
+    vehicle: formData,
   });
   return response.data;
 });
