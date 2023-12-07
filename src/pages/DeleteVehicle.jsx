@@ -14,12 +14,12 @@ const DeleteVehicle = () => {
     return <div>Loading...</div>;
   }
   return (
-    <section className="flex justify-evenly mt-20 mx-2">
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full lg:w-[700px] sm:w-full">
-        <table className=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <section className="flex justify-center w-[90%] mx-10 mt-32">
+      <div className="relative overflow-x-auto shadow-md rounded-lg w-full lg:w-[700px] sm:w-full">
+        <table className="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-2 py-3 hidden sm:flex">
+              <th scope="col" className="hidden px-2 py-3 sm:flex">
                 <span className="sr-only">Image</span>
               </th>
               <th scope="col" className="px-6 py-3  text-[16px]">
@@ -33,8 +33,8 @@ const DeleteVehicle = () => {
           <tbody>
             {vehicles.map((car) => (
               <tr className="bg-white dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={car.id}>
-                <td className="px-0 py-4 justify-center hidden sm:flex">
-                  <img className="w-16 md:w-44 max-w-full max-h-full" src={car.image} alt={car.name} />
+                <td className="justify-center hidden px-0 py-4 sm:flex">
+                  <img className="w-16 max-w-full max-h-full md:w-44" src={car.image} alt={car.name} />
                 </td>
                 <td className="px-6 py-4">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">{car.name}</h5>
