@@ -36,6 +36,11 @@
   font-weight: 500;
 }
 
+.btnCust:hover {
+  background-color: #3aae17;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .detailsContainer {
     flex-direction: column;
