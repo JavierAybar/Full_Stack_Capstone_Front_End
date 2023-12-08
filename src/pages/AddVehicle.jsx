@@ -16,8 +16,8 @@ const AddVehicle = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container vh-100 d-flex flex-row align-items-center vw-100 justify-content-center p-2">
+      <div className="row vw-100">
         <div className="col-md-6 mx-auto">
           <div className="card shadow">
             <div className="card-header">
@@ -72,7 +72,7 @@ const AddVehicle = () => {
                   </label>
                   {errors.description && <span className="text-danger">This field is required</span>}
                 </div>
-                <button type="submit" className="btn btn-primary">Add Vehicle</button>
+                <button type="submit" className="btn btn-outline-success ">Add Vehicle</button>
               </form>
             </div>
           </div>
