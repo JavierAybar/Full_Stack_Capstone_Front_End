@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { SwishSpinner } from 'react-spinners-kit';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 import { fetchReservations, deleteReservation } from '../../redux/reservation/reservSlice';
@@ -16,9 +15,9 @@ import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
 function UserReservation() {
   const dispatch = useDispatch();
   const reservations = useSelector((state) => state.reservation.reservations);
-  console.log(reservations);
-  const vehicles = useSelector((state) => state.vehicle.vehicle.data);
-  const authUser = useSelector((state) => state.auth.user);
+  const vehicles = useSelector((state) => state.vehicle.vehicle);
+  const authUser = useSelector((state) => state.auth.user.data);
+  console.log(authUser.id);
   const [loading, setLoading] = useState(true);
 
   /**
@@ -38,7 +37,8 @@ function UserReservation() {
    * @param {number} reservationId - ID of the reservation to be deleted.
    */
   const handleDelete = (reservationId) => {
-    dispatch(deleteReservation(reservationId));
+    dispatch(deleteReservation(reservationId))
+      .then(() => dispatch(fetchReservations()));
     toast.success('Reservation Deleted!');
   };
 
@@ -64,7 +64,7 @@ function UserReservation() {
   // Filter reservations for the authenticated user and existing vehicles.
   const userReservations = reservations.filter((reservation) => {
     const vehicleExists = vehicles.some((vehicle) => vehicle.id === reservation.vehicle_id);
-    return reservation.user_id === authUser.id && vehicleExists;
+    return reservation.user_id === 2 && vehicleExists;
   });
 
   // Render the component.
@@ -72,7 +72,7 @@ function UserReservation() {
     <div className="myReservationsCont">
       {loading ? (
         // Display loading spinner while data is being fetched
-        <SwishSpinner size="50" frontColor="#98be18" loading />
+        <SwishSpinner size={50} frontColor="#98be18" loading />
       ) : (
         // Display user's Test Drive reservations
         <div className="myReservations">
@@ -83,53 +83,43 @@ function UserReservation() {
           </div>
 
           {/* Swiper component to display user's Test Drive reservations */}
-          <Swiper direction="vertical" slidesPerView={1} spaceBetween={30} className="reservationSwiper">
+          <div direction="vertical" className="reservationSwiper">
             {userReservations.map((reservation) => (
-              <SwiperSlide className="reservationSlide" key={reservation.id}>
-                <div className="reservationInfo">
+              <div className="reservationSlide" key={reservation.id}>
+                <div style={{
+                  border: '1px solid red', textAlign: 'center', borderRadius: '10px',
+                }}
+                >
                   {/* Display vehicle information for each reservation */}
-                  {['Model', 'City', 'Date'].map((attr) => (
+                  {['Name', 'Price', 'Description'].map((attr) => (
                     <div className="reservationAttr" key={attr}>
                       <p className="attrName">
                         {attr}
-                        :
+                        :&nbsp;
+                        {getVehicleProperty(reservation.vehicle_id, attr.toLowerCase())}
                       </p>
-                      <p>{getVehicleProperty(reservation.vehicle_id, attr.toLowerCase())}</p>
                     </div>
                   ))}
+                  <p>
+                    Date:&nbsp;
+                    {reservation.date}
+                  </p>
+                  <p>
+                    City:&nbsp;
+                    {reservation.city}
+                  </p>
+                  <img src={getVehicleProperty(reservation.vehicle_id, 'image')} alt="car" className="xl:h-[200px] h-[250px]" />
+                  <button
+                    type="button"
+                    className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                    onClick={() => confirmDelete(reservation.id, getVehicleProperty(reservation.vehicle_id, 'name'))}
+                  >
+                    Cancel Reservation
+                  </button>
                 </div>
-                {/* Display vehicle image for each reservation */}
-                <div className={`vehicleImg vehicleImg${reservation.vehicle_id}`} />
-                {/* Style for vehicle image and additional information */}
-                <style>
-                  {`
-                    .vehicleImg${reservation.vehicle_id} {
-                      background-image: url(${getVehicleProperty(reservation.vehicle_id, 'semi_front_image')});
-                      width: 100%;
-                      max-width: 20rem;
-                      background-size: contain;
-                      background-repeat: no-repeat;
-                      background-position: center;
-                      height: 20rem;
-                      margin: -3rem 0;
-                    }
-
-                    .vehicleImg${reservation.vehicle_id}::before {
-                      background-color: ${getVehicleProperty(reservation.vehicle_id, 'color')};
-                    }
-                  `}
-                </style>
-                {/* Button to cancel reservation */}
-                <button
-                  type="submit"
-                  className="cancelReservationBtn"
-                  onClick={() => confirmDelete(reservation.id, getVehicleProperty(reservation.vehicle_id, 'name'))}
-                >
-                  Cancel Reservation
-                </button>
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
+          </div>
         </div>
       )}
     </div>
