@@ -16,7 +16,7 @@ const AddVehicle = () => {
   };
 
   return (
-    <div className="container vh-100 d-flex flex-row align-items-center vw-100 justify-content-center p-2">
+    <div className="container pt-5 mt-5 d-flex  align-items-center  justify-content-center p-2">
       <div className="row vw-100">
         <div className="col-md-6 mx-auto">
           <div className="card shadow">
@@ -26,7 +26,7 @@ const AddVehicle = () => {
             <div className="card-body">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group mb-3">
-                  <label htmlFor="name">
+                  <label className="w-100" htmlFor="name">
                     <input
                       type="text"
                       id="name"
@@ -38,7 +38,7 @@ const AddVehicle = () => {
                   {errors.name && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group mb-3">
-                  <label htmlFor="image">
+                  <label className="w-100" htmlFor="image">
                     <input
                       type="text"
                       id="image"
@@ -50,7 +50,7 @@ const AddVehicle = () => {
                   {errors.image && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group mb-3">
-                  <label htmlFor="price">
+                  <label className="w-100" htmlFor="price">
                     <input
                       type="number"
                       id="price"
@@ -62,7 +62,7 @@ const AddVehicle = () => {
                   {errors.price && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group mb-3">
-                  <label htmlFor="description">
+                  <label className="w-100" htmlFor="description">
                     <textarea
                       id="description"
                       className="form-control"
