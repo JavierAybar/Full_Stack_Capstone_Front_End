@@ -10,8 +10,8 @@ const Logout = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <p>Logging out...</p>
+    <div className="flex items-center justify-center h-screen">
+      <p className="p-4 text-lg font-semibold bg-white rounded shadow">Logged out</p>
     </div>
   );
 };
