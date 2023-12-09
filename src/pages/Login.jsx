@@ -22,16 +22,23 @@ const Login = () => {
     }
     return true;
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!validateInput()) return;
-    dispatch(authenticateUser({ email, password }))
-      .then(() => {
-        navigate('/dashboard');
-      });
-  };
-
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (!validateInput()) return;
+  dispatch(authenticateUser({ email, password }))
+    .then((response) => {
+      if (response.error) {
+        console.error(response.error); // Log the error
+        setEmail('');
+        setPassword('');
+      } else {
+        navigate('/vehicles');
+      }
+    })
+    .catch((error) => {
+      console.error(error); // Log the error
+    });
+};
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <form onSubmit={handleSubmit} className="p-6 bg-white rounded shadow-lg">
