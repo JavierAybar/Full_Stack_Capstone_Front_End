@@ -41,40 +41,46 @@ const Registration = () => {
   };
 
   return (
-    <div>
-      <h2>Registration</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <form onSubmit={handleSubmit} className="p-6 bg-white rounded shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Registration</h2>
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
+          className="w-full p-2 mb-4 border rounded focus:outline-none focus:shadow-outline"
         />
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
+          className="w-full p-2 mb-4 border rounded focus:outline-none focus:shadow-outline"
         />
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
+          className="w-full p-2 mb-4 border rounded focus:outline-none focus:shadow-outline"
         />
         <input
           type="password"
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           placeholder="Confirm Password"
+          className="w-full p-2 mb-6 border rounded focus:outline-none focus:shadow-outline"
         />
-        <button type="submit" disabled={loading}>Register</button>
+        <button type="submit" disabled={loading} style={{ backgroundColor: '#41c219' }} className="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-700">
+          Register
+        </button>
         {loading && <Spinner />}
         {error && (
-          <p>
-            Error:
-            {error}
-          </p>
+        <p className="mt-4 text-red-500">
+          Error:
+          {error}
+        </p>
         )}
       </form>
     </div>
