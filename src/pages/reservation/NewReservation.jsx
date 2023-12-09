@@ -13,9 +13,7 @@ function AddReservationPage() {
   // const navigate = useNavigate();
   const dispatch = useDispatch();
   const vehicles = useSelector((state) => state.vehicle.vehicle);
-  console.log(vehicles);
-  const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
-  const userId = userFromLocalStorage ? userFromLocalStorage.id : 1;
+  const authUser = useSelector((state) => state.auth.user.data);
 
   // Form setup using react-hook-form
   const {
@@ -27,7 +25,7 @@ function AddReservationPage() {
     defaultValues: {
       city: '',
       date: '',
-      user_id: userId,
+      user_id: authUser.id,
       vehicle_id: '',
     },
   });
