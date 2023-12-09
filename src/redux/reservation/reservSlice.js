@@ -58,7 +58,7 @@ const reservationSlice = createSlice({
       })
       .addCase(fetchReservations.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.data = action.payload;
+        state.reservations = action.payload;
       })
       .addCase(addReservation.fulfilled, (state, action) => {
         state.status = 'succeeded';
@@ -66,7 +66,7 @@ const reservationSlice = createSlice({
       })
       .addCase(deleteReservation.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.data = state.data.filter(
+        state.reservations = state.data.filter(
           (reserv) => reserv.id !== action.payload,
         );
       })
