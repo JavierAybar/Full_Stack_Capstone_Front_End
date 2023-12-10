@@ -11,6 +11,7 @@ import VehicleList from './pages/VehicleList';
 import DeleteVehicle from './pages/DeleteVehicle';
 import NewReservation from './pages/reservation/NewReservation';
 import MyReservations from './pages/reservation/MyReservations';
+import NewCarReservation from './pages/reservation/NewCarReservation';
 import store from './redux/store';
 import Navigation from './components/Navigation';
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/register" element={<Registration isAuthenticated />} />
             <Route path="/logout" element={<Logout isAuthenticated />} />
             <Route path="/new-reservation" element={<NewReservation />} />
+            <Route path="/new-car-reservation/:id" element={<NewCarReservation />} />
             <Route path="/my-reservations" element={<MyReservations />} />
           </Routes>
         </div>
