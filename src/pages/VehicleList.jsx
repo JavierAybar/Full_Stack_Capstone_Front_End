@@ -53,13 +53,15 @@ const VehicleDetails = () => {
           clickable: true,
         }}
         modules={[EffectCoverflow, Navigation]}
-        className="swiper_container"
+        className="swiper_container md:h-1/5 pb-md-5"
+        // style={{ height: '95%' }}
       >
         {vehicles.map((car) => (
-          <SwiperSlide key={car.id} style={{ width: '51%', display: 'flex' }}>
-            <div className="shadow-xl card xl:w-[32rem] w-[40rem] bg-base-100  text-center mt-auto" key={car.id}>
+          <SwiperSlide className="" key={car.id} style={{ display: 'flex' }}>
+            <div className="shadow-l relative scale-75 card l:w-[42rem] w-[40rem] bg-base-100  text-center pt-0 mt-0" key={car.id}>
               <Link className="flex flex-col items-center" to={`/vehicles/${car.id}`}>
-                <figure className={`rounded-full w-[300px] h-[300px] flex items-center ${getNextColor()}`}><img src={car.image} alt={car.image} className="xl:h-[200px] h-[250px]" /></figure>
+              <img src={car.image} alt={car.image} className="xl:h-[280px] z-1 h-[300px]" />
+                  <figure className={`rounded-full w-[230px] top-20 h-[230px] absolute z-0 flex items-center ${getNextColor()}`}></figure>
                 <div className="card-body">
                   <h2 className="mb-0 text-2xl font-bold">
                     {car.name}
