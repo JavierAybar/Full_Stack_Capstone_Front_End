@@ -1,5 +1,3 @@
-/* eslint-disable import/no-named-as-default */
-/* eslint-disable import/no-named-as-default-member */
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Provider } from 'react-redux';

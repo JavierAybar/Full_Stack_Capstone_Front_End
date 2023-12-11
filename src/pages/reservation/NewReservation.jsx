@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-props-no-spreading */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
