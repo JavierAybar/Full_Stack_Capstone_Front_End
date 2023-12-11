@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import { fetchVehicleDetails } from '../redux/vehicle_details/vehicleDetailsSlice';
 
 const VehicleDetails = () => {
@@ -13,12 +13,12 @@ const VehicleDetails = () => {
   }, [dispatch, id]);
 
   return (
-    <div className="details-container container pt-5">
+    <div className="container pt-5 details-container">
       <div className="row">
         <div className="img-container col">
           <img src={vehicleDetails.image} alt="vehicle" className="img-fluid" />
         </div>
-        <div className="vehicle-details-container col pt-5 mt-5">
+        <div className="pt-5 mt-5 vehicle-details-container col">
           <div>
             <h2 className="h1 fw-bold">{vehicleDetails.name}</h2>
             <strong className="w-100 border-bottom d-block">
@@ -27,7 +27,7 @@ const VehicleDetails = () => {
             </strong>
             <p>{vehicleDetails.description}</p>
           </div>
-          <Link to="reserve" className="btn btn-success ps-4 pe-4">Reserve</Link>
+          <NavLink className="btn btn-success ps-4 pe-4" to={`/new-car-reservation/${id}`}>Reserve</NavLink>
         </div>
       </div>
     </div>

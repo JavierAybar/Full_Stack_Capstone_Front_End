@@ -4,6 +4,7 @@
   margin: 0;
   border-right: #ddd 1px solid;
   height: 100vh;
+  z-index: 999;
 }
 
 .logoBox {
@@ -41,6 +42,7 @@
   width: 24px;
   height: 24px;
   margin-right: 8px;
+  z-index: 999;
 }
 
 .iconBar {
