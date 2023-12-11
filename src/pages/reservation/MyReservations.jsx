@@ -20,8 +20,10 @@ function UserReservation() {
   const dispatch = useDispatch();
   const reservations = useSelector((state) => state.reservation.reservations);
   const vehicles = useSelector((state) => state.vehicle.vehicle);
-  const authUser = useSelector((state) => state.auth.user.data);
-  console.log(authUser.id);
+
+const storedUser = JSON.parse(localStorage.getItem('user'));
+const authUser = storedUser ? storedUser.data.id : null;
+  // const authUser = useSelector((state) => state.auth.user.data);
 
   /**
    * useEffect Hook
@@ -65,7 +67,7 @@ function UserReservation() {
   // Filter reservations for the authenticated user and existing vehicles.
   const userReservations = reservations.filter((reservation) => {
     const vehicleExists = vehicles.some((vehicle) => vehicle.id === reservation.vehicle_id);
-    return reservation.user_id === 2 && vehicleExists;
+    return reservation.user_id === authUser && vehicleExists;
   });
 
   const predefinedColors = ['bg-red-500', 'bg-gray-300', 'bg-orange-400', 'bg-cyan-600'];
