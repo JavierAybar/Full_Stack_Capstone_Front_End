@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronRight, faGear } from '@fortawesome/free-solid-svg-icons';
 import { fetchVehicleDetails } from '../redux/vehicle_details/vehicleDetailsSlice';
