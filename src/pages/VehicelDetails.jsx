@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleChevronRight, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { fetchVehicleDetails } from '../redux/vehicle_details/vehicleDetailsSlice';
 import styles from './VehicleDetails.module.css';
 
@@ -32,8 +32,6 @@ const VehicleDetails = () => {
             <p>{vehicleDetails.description}</p>
           </div>
           <Link to="reserve" className={`btn ps-4 pe-4 ${styles.btnCust}`}>
-            <FontAwesomeIcon icon={faGear} />
-            {' '}
             Reserve
             {' '}
             <FontAwesomeIcon icon={faCircleChevronRight} />
