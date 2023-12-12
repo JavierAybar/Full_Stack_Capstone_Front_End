@@ -31,7 +31,7 @@ const VehicleDetails = () => {
             </strong>
             <p>{vehicleDetails.description}</p>
           </div>
-          <Link to="reserve" className={`btn ps-4 pe-4 ${styles.btnCust}`}>
+          <Link to={`/new-car-reservation/${id}`} className={`btn ps-4 pe-4 ${styles.btnCust}`}>
             Reserve
             {' '}
             <FontAwesomeIcon icon={faCircleChevronRight} />
