@@ -41,42 +41,52 @@ const Registration = () => {
   };
 
   return (
-    <div>
-      <h2>Registration</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
-        />
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <input
-          type="password"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-          placeholder="Confirm Password"
-        />
-        <button type="submit" disabled={loading}>Register</button>
-        {loading && <Spinner />}
-        {error && (
-          <p>
-            Error:
-            {error}
-          </p>
-        )}
-      </form>
+    <div className="container pt-5 h-1/2 mt-4 d-flex  align-items-center  justify-content-center p-2">
+      <div className="col-md-12 col-10 row mt-5 pt-5">
+        <div className="col-md-6 mt-5 mx-auto">
+          <form onSubmit={handleSubmit} className="p-6 bg-white rounded shadow-lg">
+            <h2 className="text-2xl font-bold mb-4">Registration</h2>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username"
+              className="w-full p-2 mb-4 border rounded focus:outline-none focus:shadow-outline"
+            />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              className="w-full p-2 mb-4 border rounded focus:outline-none focus:shadow-outline"
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              className="w-full p-2 mb-4 border rounded focus:outline-none focus:shadow-outline"
+            />
+            <input
+              type="password"
+              value={passwordConfirmation}
+              onChange={(e) => setPasswordConfirmation(e.target.value)}
+              placeholder="Confirm Password"
+              className="w-full p-2 mb-6 border rounded focus:outline-none focus:shadow-outline"
+            />
+            <button type="submit" disabled={loading} style={{ backgroundColor: '#41c219' }} className="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-700">
+              Register
+            </button>
+            {loading && <Spinner />}
+            {error && (
+            <p className="mt-4 text-red-500">
+              Error:
+              {error}
+            </p>
+            )}
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

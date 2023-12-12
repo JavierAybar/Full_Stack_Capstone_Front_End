@@ -16,17 +16,15 @@ const AddVehicle = () => {
   };
 
   return (
-    <div className="container vh-100 d-flex flex-row align-items-center vw-100 justify-content-center p-2">
-      <div className="row vw-100">
-        <div className="col-md-6 mx-auto">
+    <div className="container pt-5 mt-5 d-flex  align-items-center  justify-content-center p-2">
+      <div className="row mt-5 vw-100">
+        <div className="col-md-6 mt-5 mx-auto">
           <div className="card shadow">
-            <div className="card-header">
-              <h4>Add Vehicle</h4>
-            </div>
+            <h2 className="text-2xl font-bold p-6 mt-1 mb-1">Add Vehicle</h2>
             <div className="card-body">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group mb-3">
-                  <label htmlFor="name">
+                  <label className="w-100" htmlFor="name">
                     <input
                       type="text"
                       id="name"
@@ -38,7 +36,7 @@ const AddVehicle = () => {
                   {errors.name && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group mb-3">
-                  <label htmlFor="image">
+                  <label className="w-100" htmlFor="image">
                     <input
                       type="text"
                       id="image"
@@ -50,7 +48,7 @@ const AddVehicle = () => {
                   {errors.image && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group mb-3">
-                  <label htmlFor="price">
+                  <label className="w-100" htmlFor="price">
                     <input
                       type="number"
                       id="price"
@@ -62,7 +60,7 @@ const AddVehicle = () => {
                   {errors.price && <span className="text-danger">This field is required</span>}
                 </div>
                 <div className="form-group mb-3">
-                  <label htmlFor="description">
+                  <label className="w-100" htmlFor="description">
                     <textarea
                       id="description"
                       className="form-control"
@@ -72,7 +70,7 @@ const AddVehicle = () => {
                   </label>
                   {errors.description && <span className="text-danger">This field is required</span>}
                 </div>
-                <button type="submit" className="btn btn-outline-success ">Add Vehicle</button>
+                <button type="submit" style={{ backgroundColor: '#41c219' }} className="w-full p-2 text-white rounded hover:bg-green-600">Add Vehicle</button>
               </form>
             </div>
           </div>

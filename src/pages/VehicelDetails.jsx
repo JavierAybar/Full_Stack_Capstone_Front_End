@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, NavLink } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { fetchVehicleDetails } from '../redux/vehicle_details/vehicleDetailsSlice';
+import styles from './VehicleDetails.module.css';
 
 const VehicleDetails = () => {
   const { id } = useParams();
@@ -13,21 +16,26 @@ const VehicleDetails = () => {
   }, [dispatch, id]);
 
   return (
-    <div className="container pt-5 details-container">
-      <div className="row">
-        <div className="img-container col">
+    <div className="container pt-5">
+      <div className={styles.detailsContainer}>
+        <div className={styles.imageContainer}>
           <img src={vehicleDetails.image} alt="vehicle" className="img-fluid" />
         </div>
-        <div className="pt-5 mt-5 vehicle-details-container col">
-          <div>
-            <h2 className="h1 fw-bold">{vehicleDetails.name}</h2>
+        <div className={styles.vehicleDetailsContainer}>
+          <div className={styles.detailsBox}>
+            <h2 className="h1 fw-bold text-align-right">{vehicleDetails.name}</h2>
             <strong className="w-100 border-bottom d-block">
               Price:
+              $
               {vehicleDetails.price}
             </strong>
             <p>{vehicleDetails.description}</p>
           </div>
-          <NavLink className="btn btn-success ps-4 pe-4" to={`/new-car-reservation/${id}`}>Reserve</NavLink>
+          <Link to={`/new-car-reservation/${id}`} className={`btn ps-4 pe-4 ${styles.btnCust}`}>
+            Reserve
+            {' '}
+            <FontAwesomeIcon icon={faCircleChevronRight} />
+          </Link>
         </div>
       </div>
     </div>
