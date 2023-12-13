@@ -17,15 +17,15 @@ const DeleteVehicle = () => {
     <section className="flex justify-center w-[90%] mx-10 mt-48">
       <div className="relative overflow-x-auto shadow-md rounded-lg w-full lg:w-[550px] sm:w-4/5">
         <table className="w-full text-sm text-left rtl:text-right">
-          <thead className="bg-white rounded shadow-lg uppercase" >
-            <tr>
-              <th scope="col" className="px-6 py-3 text-2xl font-bold text-center text-[16px]">
+          <thead className="uppercase bg-white rounded shadow-lg" >
+            <tr className="bg-lime-300">
+              <th scope="col" className="px-6 py-3 text-2xl font-bold text-center text-[16px] text-stone-600">
                 Product
               </th>
-              <th scope="col" className="px-6 py-3 text-2xl font-bold text-center text-[16px]">
+              <th scope="col" className="px-6 py-3 text-2xl font-bold text-center text-[16px] text-stone-600">
                 Model
               </th>
-              <th scope="col" className="px-6 py-3 text-2xl font-bold text-center text-[16px]">
+              <th scope="col" className="px-6 py-3 text-2xl font-bold text-center text-[16px] text-stone-600">
                 Action
               </th>
             </tr>
@@ -33,7 +33,7 @@ const DeleteVehicle = () => {
           <tbody>
             {vehicles.map((car) => (
               <tr className="bg-white dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={car.id}>
-                <td className="justify-center px-0 py-4 flex">
+                <td className="flex justify-center px-0 py-4">
                   <img className="w-16 max-w-full max-h-full md:w-44" src={car.image} alt={car.name} />
                 </td>
                 <td className="px-6 py-4 text-center">
