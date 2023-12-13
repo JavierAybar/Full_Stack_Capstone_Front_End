@@ -23,7 +23,6 @@ const UserReservation = () => {
 
 const storedUser = JSON.parse(localStorage.getItem('user'));
 const authUser = storedUser ? storedUser.data.id : null;
-  // const authUser = useSelector((state) => state.auth.user.data);
 
   /**
    * useEffect Hook

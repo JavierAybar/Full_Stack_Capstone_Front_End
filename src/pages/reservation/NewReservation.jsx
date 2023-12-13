@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-// import { useNavigate } from 'react-router-dom';
 import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
 import { addReservation } from '../../redux/reservation/reservSlice';
 import image from '../../assets/mercedes-reservation.png';

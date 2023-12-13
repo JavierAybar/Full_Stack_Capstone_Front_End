@@ -11,13 +11,10 @@ import { addReservation } from '../../redux/reservation/reservSlice';
 import image from '../../assets/mercedes-reservation.png';
 
 const AddReservationPage = () => {
-  // const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
   console.log(id);
 
-  // const userFromLocalStorage = JSON.parse(localStorage.getItem('user'));
-  // const userId = userFromLocalStorage ? userFromLocalStorage.id : null;
   const authUser = useSelector((state) => state.auth.user.data);
 
   const { register, handleSubmit } = useForm();
