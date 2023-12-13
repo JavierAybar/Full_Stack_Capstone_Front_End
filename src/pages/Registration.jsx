@@ -74,9 +74,14 @@ const Registration = () => {
               placeholder="Confirm Password"
               className="w-full p-2 mb-6 border rounded focus:outline-none focus:shadow-outline"
             />
-            <button type="submit" disabled={loading} style={{ backgroundColor: '#41c219' }} className="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-700">
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full p-2 text-white bg-[#41c219] hover:bg-green-600 rounded"
+            >
               Register
             </button>
+
             {loading && <Spinner />}
             {error && (
             <p className="mt-4 text-red-500">

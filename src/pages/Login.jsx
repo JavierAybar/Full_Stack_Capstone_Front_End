@@ -62,11 +62,11 @@ const handleSubmit = (e) => {
             <button
               type="submit"
               disabled={loading}
-              style={{ backgroundColor: '#41c219' }}
-              className="w-full p-2 text-white rounded hover:bg-green-600"
-            >
+              className="w-full p-2 text-white bg-[#41c219] hover:bg-green-600 rounded"
+              >
               Login
             </button>
+
             {loading && <Spinner />}
             {error && (
               <p className="mt-4 text-red-500">
