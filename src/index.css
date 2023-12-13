@@ -162,3 +162,7 @@ html {
 .slider-controler .slider-arrow::after {
   content: "";
 }
+
+.swiper-wrapper {
+  justify-content: center;
+}
