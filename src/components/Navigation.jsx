@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +10,9 @@ const Navigation = () => {
   const handleClick = () => {
     setState(!state);
   };
-  const isAuthenticated = useSelector((state) => state.auth.user);
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+
+  const isAuthenticated = storedUser ? storedUser.data.id : null;
 
   return (
     <div>
