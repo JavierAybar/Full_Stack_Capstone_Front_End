@@ -8,7 +8,7 @@ import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
 import { addReservation } from '../../redux/reservation/reservSlice';
 import image from '../../assets/mercedes-reservation.png';
 
-function AddReservationPage() {
+const AddReservationPage = () => {
   // Hooks and state
   // const navigate = useNavigate();
   const dispatch = useDispatch();

@@ -16,7 +16,7 @@ import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
  * UserReservation Component
  * Displays Test Drive reservations for the authenticated user.
  */
-function UserReservation() {
+const UserReservation = () => {
   const dispatch = useDispatch();
   const reservations = useSelector((state) => state.reservation.reservations);
   const vehicles = useSelector((state) => state.vehicle.vehicle);

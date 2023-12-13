@@ -10,7 +10,7 @@ import { addReservation } from '../../redux/reservation/reservSlice';
 
 import image from '../../assets/mercedes-reservation.png';
 
-function AddReservationPage() {
+const AddReservationPage = () => {
   // const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();

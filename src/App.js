@@ -14,28 +14,26 @@ import NewCarReservation from './pages/reservation/NewCarReservation';
 import store from './redux/store';
 import Navigation from './components/Navigation';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <div className="">
-          <Navigation />
-          <Routes>
-            <Route path="/vehicles" element={<VehicleList />} />
-            <Route path="/vehicles/:id" element={<VehicleDetails />} />
-            <Route path="/new-vehicle" element={<AddVehicle />} />
-            <Route path="/delete" element={<DeleteVehicle />} />
-            <Route path="/login" element={<Login isAuthenticated />} />
-            <Route path="/register" element={<Registration isAuthenticated />} />
-            <Route path="/logout" element={<Logout isAuthenticated />} />
-            <Route path="/new-reservation" element={<NewReservation />} />
-            <Route path="/new-car-reservation/:id" element={<NewCarReservation />} />
-            <Route path="/my-reservations" element={<MyReservations />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </Provider>
-  );
-}
+const App = () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <div className="">
+        <Navigation />
+        <Routes>
+          <Route path="/vehicles" element={<VehicleList />} />
+          <Route path="/vehicles/:id" element={<VehicleDetails />} />
+          <Route path="/new-vehicle" element={<AddVehicle />} />
+          <Route path="/delete" element={<DeleteVehicle />} />
+          <Route path="/login" element={<Login isAuthenticated />} />
+          <Route path="/register" element={<Registration isAuthenticated />} />
+          <Route path="/logout" element={<Logout isAuthenticated />} />
+          <Route path="/new-reservation" element={<NewReservation />} />
+          <Route path="/new-car-reservation/:id" element={<NewCarReservation />} />
+          <Route path="/my-reservations" element={<MyReservations />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  </Provider>
+);
 
 export default App;
