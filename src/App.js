@@ -13,6 +13,7 @@ import MyReservations from './pages/reservation/MyReservations';
 import NewCarReservation from './pages/reservation/NewCarReservation';
 import store from './redux/store';
 import Navigation from './components/Navigation';
+import WelcomePage from './components/WelcomePage';
 
 const App = () => (
   <Provider store={store}>
@@ -20,6 +21,7 @@ const App = () => (
       <div className="">
         <Navigation />
         <Routes>
+          <Route path="/" element={<WelcomePage />} />
           <Route path="/vehicles" element={<VehicleList />} />
           <Route path="/vehicles/:id" element={<VehicleDetails />} />
           <Route path="/new-vehicle" element={<AddVehicle />} />

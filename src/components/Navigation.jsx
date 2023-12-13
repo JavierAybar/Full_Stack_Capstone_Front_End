@@ -24,6 +24,12 @@ const Navigation = () => {
             <img src={image} alt="mercedes logo" />
           </div>
           <ul className={styles.nav}>
+            {!isAuthenticated && (
+              <li className={styles.navItem}>
+                <NavLink to="/" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Home</NavLink>
+              </li>
+            )}
+
             {isAuthenticated ? (
               <>
                 <li className={styles.navItem}>
