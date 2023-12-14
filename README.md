@@ -4,6 +4,7 @@
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
+  - [🚀 Live Demo](live-demo)
     - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Linters](#linters)
@@ -24,6 +25,10 @@
 - CSS
 - JavaScript
 - React
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+You can visit the live demo [here](https://vehicle-reservation-system.netlify.app/)
 
 ### Key Features <a name="key-features"></a>
 
