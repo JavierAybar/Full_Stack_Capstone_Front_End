@@ -14,6 +14,8 @@ const Navigation = () => {
 
   const isAuthenticated = storedUser ? storedUser.data.id : null;
 
+  const isAdmin = storedUser.data.admin === true;
+
   return (
     <div>
       {state ? (
@@ -42,12 +44,16 @@ const Navigation = () => {
                 <li className={styles.navItem}>
                   <NavLink to="/my-reservations" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>My reservations</NavLink>
                 </li>
-                <li className={styles.navItem}>
-                  <NavLink to="/new-vehicle" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Add vehicle</NavLink>
-                </li>
-                <li className={styles.navItem}>
-                  <NavLink to="/delete" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Delete vehicle</NavLink>
-                </li>
+                {isAdmin && (
+                  <li className={styles.navItem}>
+                    <NavLink to="/new-vehicle" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Add vehicle</NavLink>
+                  </li>
+                )}
+                {isAdmin && (
+                  <li className={styles.navItem}>
+                    <NavLink to="/delete" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Delete vehicle</NavLink>
+                  </li>
+                )}
                 <li className={styles.navItem}>
                   <NavLink to="/logout" onClick={handleClick} className={({ isActive }) => (isActive ? styles.active : '')}>Logout</NavLink>
                 </li>
