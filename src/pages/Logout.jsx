@@ -10,6 +10,8 @@ const Logout = () => {
   useEffect(() => {
     dispatch(logoutUser())
       .then(() => {
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('user');
         // Redirect to the Welcome page after successful logout
         navigate('/');
       })

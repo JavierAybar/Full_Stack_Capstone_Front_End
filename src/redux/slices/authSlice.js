@@ -3,27 +3,40 @@ import AuthService from '../../services/AuthService';
 
 export const authenticateUser = createAsyncThunk(
   'auth/authenticateUser',
-  async ({ email, password }) => {
-    const response = await AuthService.login(email, password);
-    return response;
+  async ({ email, password }, { rejectWithValue }) => {
+    try {
+      const response = await AuthService.login(email, password);
+      return response;
+    } catch (error) {
+      console.error('Error in authenticateUser:', error);
+      return rejectWithValue(error.message);
+    }
   },
 );
 
 export const logoutUser = createAsyncThunk(
   'auth/logoutUser',
   async () => {
-    const response = await AuthService.logout();
-    return response;
+    try {
+      const response = await AuthService.logout();
+      return response;
+    } catch (error) {
+      console.error('Error in logoutUser:', error);
+      throw error;
+    }
   },
 );
 
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
-  async ({
-    username, email, password, passwordConfirmation,
-  }) => {
-    const response = await AuthService.register(username, email, password, passwordConfirmation);
-    return response;
+  async ({ username, email, password, passwordConfirmation }) => {
+    try {
+      const response = await AuthService.register(username, email, password, passwordConfirmation);
+      return response;
+    } catch (error) {
+      console.error('Error in registerUser:', error);
+      throw error;
+    }
   },
 );
 
@@ -49,7 +62,10 @@ const authSlice = createSlice({
       state.loading = false;
       state.user = action.payload;
       state.error = null;
-      localStorage.setItem('authToken', action.payload.token);
+      const token = action.payload.token;
+      if (token) {
+        localStorage.setItem('authToken', token);
+      }
       localStorage.setItem('user', JSON.stringify(action.payload));
     },
     [authenticateUser.rejected]: (state, action) => {

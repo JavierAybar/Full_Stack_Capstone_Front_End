@@ -28,7 +28,7 @@ const handleSubmit = (e) => {
   dispatch(authenticateUser({ email, password }))
     .then((response) => {
       if (response.error) {
-        console.error(response.error); // Log the error
+        console.error('Error response:', response.error);
         setEmail('');
         setPassword('');
       } else {
@@ -36,7 +36,7 @@ const handleSubmit = (e) => {
       }
     })
     .catch((error) => {
-      console.error(error); // Log the error
+      console.error('Error in handleSubmit:', error);
     });
 };
   return (
