@@ -57,7 +57,7 @@ const VehicleDetails = () => {
         // style={{ height: '95%' }}
       >
         {vehicles.map((car) => (
-          <SwiperSlide className="" key={car.id} style={{ display: 'flex' }}>
+          <SwiperSlide className="" key={car.id} style={{ display: 'flex', justifyContent: 'center'}}>
             <div className="shadow-l relative scale-75 card l:w-[42rem] w-[40rem] bg-base-100  text-center pt-0 mt-0" key={car.id}>
               <Link className="flex flex-col items-center" to={`/vehicles/${car.id}`}>
               <img src={car.image} alt={car.image} className="xl:h-[280px] z-1 h-[300px]" />
