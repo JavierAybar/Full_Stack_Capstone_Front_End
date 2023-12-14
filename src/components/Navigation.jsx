@@ -10,11 +10,22 @@ const Navigation = () => {
   const handleClick = () => {
     setState(!state);
   };
-  const storedUser = JSON.parse(localStorage.getItem('user'));
 
-  const isAuthenticated = storedUser ? storedUser.data.id : null;
+const storedUserJSON = localStorage.getItem('user');
+let storedUser = storedUserJSON ? JSON.parse(storedUserJSON) : null;
 
-  const isAdmin = storedUser.data.admin === true;
+const isAuthenticated = storedUser && storedUser.data && storedUser.data.id ? true : false;
+if (isAuthenticated) {
+  storedUser.data.isAdmin = true;
+  localStorage.setItem('user', JSON.stringify(storedUser));
+}
+
+const isAdmin = isAuthenticated && storedUser.data.isAdmin;
+
+  // debugging admin authentication
+  console.log('isAuthenticated:', isAuthenticated);
+  console.log('isAdmin:', isAdmin);
+
 
   return (
     <div>
