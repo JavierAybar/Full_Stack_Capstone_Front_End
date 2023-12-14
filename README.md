@@ -18,7 +18,7 @@
 
 ## 🛠 Built With <a name="built-with"></a>
 
-<a href="https://github.com/JavierAybar/hello-rails-back-end/tree/rails-api">See the Rails Application</a>
+<a href="https://github.com/JavierAybar/Full_Stack_Capstone_Back_End">See the Rails Application</a>
 
 - HTML
 - CSS
