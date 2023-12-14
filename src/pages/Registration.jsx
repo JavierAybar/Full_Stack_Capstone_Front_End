@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../redux/slices/authSlice';
-import Spinner from '../components/Spinner';
 
 const Registration = () => {
   const [username, setUsername] = useState('');
@@ -32,20 +31,24 @@ const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateInput()) return;
+    
     dispatch(registerUser({
       username, email, password, passwordConfirmation,
     }))
-      .then(() => {
-        navigate('/login');
-      });
+      .then((response) => {
+        // Check if the response status is 200
+        if (response.type === "auth/registerUser/fulfilled" ) {
+          navigate('/vehicles');
+        }
+      })
   };
 
   return (
-    <div className="container pt-5 h-1/2 mt-4 d-flex  align-items-center  justify-content-center p-2">
-      <div className="col-md-12 col-10 row mt-5 pt-5">
-        <div className="col-md-6 mt-5 mx-auto">
+    <div className="container p-2 pt-5 mt-4 h-1/2 d-flex align-items-center justify-content-center">
+      <div className="pt-5 mt-5 col-md-12 col-10 row">
+        <div className="mx-auto mt-5 col-md-6">
           <form onSubmit={handleSubmit} className="p-6 bg-white rounded shadow-lg">
-            <h2 className="text-2xl font-bold mb-4">Registration</h2>
+            <h2 className="mb-4 text-2xl font-bold">Registration</h2>
             <input
               type="text"
               value={username}
@@ -82,7 +85,6 @@ const Registration = () => {
               Register
             </button>
 
-            {loading && <Spinner />}
             {error && (
             <p className="mt-4 text-red-500">
               Error:
