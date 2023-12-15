@@ -117,7 +117,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to Microverse.
+[Vespa](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) - Responsive Redesign by Murat Korkmaz
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
