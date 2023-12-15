@@ -4,6 +4,7 @@
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
+  - [🚀 Live Demo](live-demo)
     - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Linters](#linters)
@@ -18,12 +19,16 @@
 
 ## 🛠 Built With <a name="built-with"></a>
 
-<a href="https://github.com/JavierAybar/hello-rails-back-end/tree/rails-api">See the Rails Application</a>
+<a href="https://github.com/JavierAybar/Full_Stack_Capstone_Back_End">See the Rails Application</a>
 
 - HTML
 - CSS
 - JavaScript
 - React
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+You can visit the live demo [here](https://vehicle-reservation-system.netlify.app/)
 
 ### Key Features <a name="key-features"></a>
 

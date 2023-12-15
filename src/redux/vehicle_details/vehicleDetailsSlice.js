@@ -3,9 +3,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 export const fetchVehicleDetails = createAsyncThunk(
   'vehicleDetails/getVehicleDetails',
   async (vehicleId) => {
-    const response = await fetch(`http://localhost:3000/api/v1/vehicles/${vehicleId}`);
+    const response = await fetch(`https://api-endpoint-qn9n.onrender.com/api/v1/vehicles/${vehicleId}`);
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
     return data;
   },
 );
