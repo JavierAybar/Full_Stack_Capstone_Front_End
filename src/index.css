@@ -19,6 +19,16 @@ body {
   overflow: hidden;
 }
 
+.enable-scrolling {
+  overflow: auto !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.enable-scrolling::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
