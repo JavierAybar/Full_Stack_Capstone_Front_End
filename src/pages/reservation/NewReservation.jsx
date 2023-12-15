@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom"; 
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
@@ -9,7 +10,7 @@ import image from '../../assets/cars_parking.jpg';
 
 const AddReservationPage = () => {
   // Hooks and state
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const vehicles = useSelector((state) => state.vehicle.vehicle);
   const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -46,7 +47,7 @@ const AddReservationPage = () => {
       // Show a success toast message
       toast.success('Reservation added successfully!');
       // Redirect to "My Reservations"
-      // navigate('/my-reservations');
+      navigate('/my-reservations');
     });
   };
   // , backgroundSize: 'cover', backgroundPosition: 'center'

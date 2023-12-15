@@ -17,8 +17,9 @@ const AddReservationPage = () => {
   const dispatch = useDispatch();
   console.log(id);
 
-  const userFromLocalStorage = JSON.parse(localStorage.getItem("user"));
-  const userId = userFromLocalStorage ? userFromLocalStorage.id : null;
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+
+  const authUser = storedUser ? storedUser.data.id : null;
 
   const { register, handleSubmit } = useForm();
 
@@ -29,7 +30,7 @@ const AddReservationPage = () => {
   const onSubmit = (data) => {
     const formDataWithIds = {
       ...data,
-      user_id: userId,
+      user_id: authUser,
       vehicle_id: id,
     };
 
