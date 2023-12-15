@@ -1,4 +1,5 @@
-const AUTH_API_URL = 'https://api-endpoint-qn9n.onrender.com/';
+
+const AUTH_API_URL = 'https://api-endpoint-qn9n.onrender.com';
 
 const login = async (email, password) => {
   const response = await fetch(`${AUTH_API_URL}/login`, {
