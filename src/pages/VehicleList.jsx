@@ -32,7 +32,7 @@ const VehicleDetails = () => {
   };
 
   return (
-    <div className="container p-[0px]">
+    <div className="container full-height p-[0px]">
       <div className="flex flex-col items-center pb-[10px] pt-[70px]">
         <h1 className="text-4xl font-extrabold LINE">LATEST MODELS</h1>
         <p className="font-semibold text-stone-400">Please select a Model</p>
