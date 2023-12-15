@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { toast } from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 
@@ -12,10 +13,12 @@ import image from '../../assets/mercedes-reservation.png';
 
 const AddReservationPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   console.log(id);
 
-  const authUser = useSelector((state) => state.auth.user.data);
+  const userFromLocalStorage = JSON.parse(localStorage.getItem("user"));
+  const userId = userFromLocalStorage ? userFromLocalStorage.id : null;
 
   const { register, handleSubmit } = useForm();
 
@@ -26,15 +29,15 @@ const AddReservationPage = () => {
   const onSubmit = (data) => {
     const formDataWithIds = {
       ...data,
-      user_id: authUser.id,
+      user_id: userId,
       vehicle_id: id,
     };
 
     dispatch(addReservation(formDataWithIds)).then(() => {
       // Show a success toast message
-      toast.success('Reservation added successfully!');
+      toast.success("Reservation added successfully!");
       // Redirect to "My Reservations"
-      // navigate('/my-reservations');
+      navigate("/my-reservations");
     });
   };
 
