@@ -53,8 +53,8 @@ const AddReservationPage = () => {
           facilities. If you wish to find out if a test-ride is available in your area, please use
           the selector below.
         </p>
-        <div className="mx-auto ">
-          <form className="p-6 bg-white rounded shadow-lg sm:w-[430px] w-[340px]" onSubmit={handleSubmit(onSubmit)}>
+        <div className="login-form-div">
+          <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
             {/* City Input */}
             <label htmlFor="city" className="block mt-2 mb-2 text-sm font-medium text-gray-800 dark:text-back">
               Select your city
