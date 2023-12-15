@@ -4,6 +4,7 @@
 
 @import url(./assets/styles/login.module.css);
 @import url(./assets/styles/vehicle-list.module.css);
+@import url(./assets/styles/reservation.module.css);
 
 *,
 *::before,
