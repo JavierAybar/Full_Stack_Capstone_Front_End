@@ -41,7 +41,7 @@ const handleSubmit = (e) => {
     });
 };
   return (
-    <div className="login-page container h-1/2 d-flex  align-items-center  justify-content-center" style={{ backgroundImage: `url(${image})` }}>
+    <div className="login-page full-height container h-1/2 d-flex  align-items-center  justify-content-center" style={{ backgroundImage: `url(${image})` }}>
       <div className='login-blured'>
 
         <div className="login-form-div">

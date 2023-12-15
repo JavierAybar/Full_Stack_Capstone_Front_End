@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url(./assets/styles/login.module.css);
+@import url(./assets/styles/vehicle-list.module.css);
 
 *,
 *::before,
@@ -66,9 +67,12 @@ html {
 
 .container {
   max-width: 100vw;
-  height: 100vh;
   padding: 0;
   margin: 0 auto;
+}
+
+.full-height {
+  height: 100vh;
 }
 
 .heading {
