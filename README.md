@@ -99,7 +99,7 @@ You can visit the live demo [here](https://vehicle-reservation-system.netlify.ap
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Implement CRUD functionality**: Develop a comprehensive CRUD (Create, Read, Update, Delete) application, enabling efficient management and manipulation of message data within the system
+- [ ] **Implement CRUD functionality**: Develop a comprehensive CRUD (Create, Read, Update, Delete) application, enabling efficient management and manipulation of message data within the system.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
