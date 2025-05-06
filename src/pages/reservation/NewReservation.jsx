@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
@@ -134,6 +134,6 @@ const AddReservationPage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default AddReservationPage;

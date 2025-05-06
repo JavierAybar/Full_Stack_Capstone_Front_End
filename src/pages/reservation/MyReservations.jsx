@@ -21,8 +21,8 @@ const UserReservation = () => {
   const reservations = useSelector((state) => state.reservation.reservations);
   const vehicles = useSelector((state) => state.vehicle.vehicle);
 
-const storedUser = JSON.parse(localStorage.getItem('user'));
-const authUser = storedUser ? storedUser.data.id : null;
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+  const authUser = storedUser ? storedUser.data.id : null;
 
   /**
    * useEffect Hook
@@ -113,7 +113,7 @@ const authUser = storedUser ? storedUser.data.id : null;
             <div className="shadow-l relative scale-75 card l:w-[42rem] w-[40rem] bg-base-100  text-center pt-0 mt-0" key={reservation.id}>
               <div className="flex flex-col items-center">
                 <img src={getVehicleProperty(reservation.vehicle_id, 'image')} alt="car" className="xl:h-[280px] z-1 h-[300px]" />
-                <figure className={`rounded-full w-[230px] top-20 h-[230px] absolute z-0 flex items-center ${getNextColor()}`}></figure>
+                <figure className={`rounded-full w-[230px] top-20 h-[230px] absolute z-0 flex items-center ${getNextColor()}`} />
                 <div className="card-body">
                   {['Name', 'Price'].map((attr) => (
                     <div className="reservationAttr" key={attr}>
@@ -159,5 +159,5 @@ const authUser = storedUser ? storedUser.data.id : null;
       </Swiper>
     </div>
   );
-}
+};
 export default UserReservation;

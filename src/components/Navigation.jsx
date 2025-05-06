@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,21 +12,20 @@ const Navigation = () => {
     setState(!state);
   };
 
-const storedUserJSON = localStorage.getItem('user');
-let storedUser = storedUserJSON ? JSON.parse(storedUserJSON) : null;
+  const storedUserJSON = localStorage.getItem('user');
+  const storedUser = storedUserJSON ? JSON.parse(storedUserJSON) : null;
 
-const isAuthenticated = storedUser && storedUser.data && storedUser.data.id ? true : false;
-if (isAuthenticated) {
-  storedUser.data.isAdmin = true;
-  localStorage.setItem('user', JSON.stringify(storedUser));
-}
+  const isAuthenticated = !!(storedUser && storedUser.data && storedUser.data.id);
+  if (isAuthenticated) {
+    storedUser.data.isAdmin = true;
+    localStorage.setItem('user', JSON.stringify(storedUser));
+  }
 
-const isAdmin = isAuthenticated && storedUser.data.isAdmin;
+  const isAdmin = isAuthenticated && storedUser.data.isAdmin;
 
   // debugging admin authentication
   console.log('isAuthenticated:', isAuthenticated);
   console.log('isAdmin:', isAdmin);
-
 
   return (
     <div>

@@ -17,10 +17,10 @@ const AddVehicle = () => {
   };
 
   return (
-    <div className="container login-page full-height d-flex  align-items-center  justify-content-center" style={{ backgroundImage: `url(${image})`}}>
+    <div className="container login-page full-height d-flex  align-items-center  justify-content-center" style={{ backgroundImage: `url(${image})` }}>
       <div className="login-blured">
         <div className="login-form-div card-body">
-          <form onSubmit={handleSubmit(onSubmit)} className='login-form'>
+          <form onSubmit={handleSubmit(onSubmit)} className="login-form">
             <h2 className="text-2xl font-bold p-6 mt-1 mb-1">Add Vehicle</h2>
             <div className="form-group mb-3">
               <label className="w-100" htmlFor="name">

@@ -32,16 +32,16 @@ const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateInput()) return;
-    
+
     dispatch(registerUser({
       username, email, password, passwordConfirmation,
     }))
       .then((response) => {
         // Check if the response status is 200
-        if (response.type === "auth/registerUser/fulfilled" ) {
+        if (response.type === 'auth/registerUser/fulfilled') {
           navigate('/vehicles');
         }
-      })
+      });
   };
 
   return (

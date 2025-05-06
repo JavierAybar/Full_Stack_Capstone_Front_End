@@ -30,12 +30,12 @@ const addVehicleSlice = createSlice({
         state.data.push(action.payload);
       })
       .addMatcher(
-        (action) => [addNewVehicle.rejected].includes(action.type),
+        (action) => action.type === addNewVehicle.rejected.type,
         (state, action) => {
           state.status = 'failed';
           state.error = action.error.message;
           state.loading = false;
-        },
+        }
       );
   },
 });

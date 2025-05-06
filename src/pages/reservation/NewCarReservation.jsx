@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import { useParams } from 'react-router-dom';
 
 import { useForm } from 'react-hook-form';
 
@@ -36,9 +35,9 @@ const AddReservationPage = () => {
 
     dispatch(addReservation(formDataWithIds)).then(() => {
       // Show a success toast message
-      toast.success("Reservation added successfully!");
+      toast.success('Reservation added successfully!');
       // Redirect to "My Reservations"
-      navigate("/my-reservations");
+      navigate('/my-reservations');
     });
   };
 
@@ -101,6 +100,6 @@ const AddReservationPage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default AddReservationPage;

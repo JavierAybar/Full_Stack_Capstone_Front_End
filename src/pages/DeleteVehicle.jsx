@@ -21,7 +21,7 @@ const DeleteVehicle = () => {
     <section className="flex justify-center w-[90%] mx-10 mt-48">
       <div className="relative overflow-x-auto shadow-md rounded-lg w-full lg:w-[550px] sm:w-4/5">
         <table className="w-full text-sm text-left rtl:text-right">
-          <thead className="uppercase bg-white rounded shadow-lg" >
+          <thead className="uppercase bg-white rounded shadow-lg">
             <tr className="bg-lime-300">
               <th scope="col" className="px-6 py-3 text-2xl font-bold text-center text-[16px] text-stone-600">
                 Product
