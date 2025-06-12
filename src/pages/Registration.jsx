@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../redux/slices/authSlice';
@@ -45,7 +46,7 @@ const Registration = () => {
   };
 
   return (
-    <div className=" login-page container full-height h-1/2 d-flex align-items-center justify-content-center" style={{ backgroundImage: `url(${image})` }}>
+    <div className="container login-page full-height h-1/2 d-flex align-items-center justify-content-center" style={{ backgroundImage: `url(${image})` }}>
       <div className="login-blured">
         <div className="login-form-div">
           <form onSubmit={handleSubmit} className="login-form">
