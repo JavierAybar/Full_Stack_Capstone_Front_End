@@ -4,7 +4,7 @@ import image from '../assets/mercedes-home.png';
 import Button from './Button.jsx';
 
 const WelcomePage = () => (
-   <div className="min-h-dvh xl:min-h-full flex flex-col justify-center mx-auto max-w-[1100px] overflow-y-auto xl:mt-[6rem] h-dvh xl:h-full">
+   <div className="min-h-dvh xl:min-h-full flex lg:flex-col justify-center mx-auto max-w-[1100px] overflow-y-auto xl:mt-[6rem] h-dvh xl:h-full">
       <div className="pb-8 sm:pb-16 md:pb-20 lg:w-full lg:pb-28 xl:pb-32">
         <main className="px-4 mx-auto sm:px-6 lg:px-8 lg:flex lg:items-center">
           <div className="max-w-full px-4 pt-[20%] md:pt-[10rem] pb-9 sm:text-center lg:text-left lg:pt-[90px] lg:pb-24">
