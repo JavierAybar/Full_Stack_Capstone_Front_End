@@ -48,12 +48,12 @@ const StyledWrapper = styled.div`
 
   button::before {
    left: -7px;
-   background: #240046;
+   background: #990c2b;
   }
 
   button::after {
    right: -6px;
-   background: #5a189a;
+   background: #d10404;
   }
 
   button:hover::before,
