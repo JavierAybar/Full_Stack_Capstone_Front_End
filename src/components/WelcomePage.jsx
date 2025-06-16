@@ -2,9 +2,11 @@ import React from 'react';
 import image from '../assets/mercedes-home.png';
 import Button from './Button.jsx';
 import RegisterModal from './RegistrationModal.jsx';
+import LoginModal from './LoginModal.jsx';
 
 const WelcomePage = () => {
   const [showRegisterModal, setShowRegisterModal] = React.useState(false);
+  const [showLoginModal, setShowLoginModal] = React.useState(false);
   
 
   return (
@@ -22,7 +24,7 @@ const WelcomePage = () => {
             <div className="mt-5 sm:flex sm:justify-center lg:justify-start ">
               
               <div className="mb-2 rounded-md">
-                <Button>Login</Button>
+                <Button onClick={() => setShowLoginModal(true)}>Login</Button>
               </div>
               <div className="ml-0 sm:mt-0 sm:ml-2">  
                   <Button onClick={() => setShowRegisterModal(true)}>Register</Button>
@@ -46,6 +48,7 @@ const WelcomePage = () => {
     
       {/* Modals */}
      <RegisterModal open={showRegisterModal} onOpenChange={setShowRegisterModal} />
+     <LoginModal open={showLoginModal} onOpenChange={setShowLoginModal} />
     
     </div>
     
