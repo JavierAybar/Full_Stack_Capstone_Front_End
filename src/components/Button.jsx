@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = ({ children }) => {
+const Button = ({ children, ...props }) => {
   return (
     <StyledWrapper>
-      <button>
+      <button {...props}  >
         <span> { children }
         </span>
       </button>
@@ -48,12 +48,12 @@ const StyledWrapper = styled.div`
 
   button::before {
    left: -7px;
-   background: #990c2b;
+   background: #dc2626;
   }
 
   button::after {
    right: -6px;
-   background: #d10404;
+   background: #C70039;
   }
 
   button:hover::before,
@@ -69,12 +69,18 @@ const StyledWrapper = styled.div`
   button span {
    color: ghostwhite;
    font-size: 1.4rem;
-   transition: all 0.3s ease-in;
+   transition: all 1s ease-in;
   }
  
   @media (min-width: 375px) {
   button {
     width: 120px;
+  }
+
+   @media (min-width: 1024px) {
+  button {
+    width: 135px;
+    height: 3.2rem;
   }
 
   @media (min-width: 768px) {
