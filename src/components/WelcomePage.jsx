@@ -18,7 +18,7 @@ const WelcomePage = () => {
               <span className="block ">Rent Premium Cars</span>
               <span className="block text-red-600">easy <span className="text-gray-700">and</span> fast</span>
             </h1>
-            <p className="mt-4 xl:text-[15px] text-[17px] md:text-[22px] lg:text-[21px] text-gray-500 sm:mt-5 sm:max-w-4xl sm:mx-auto  lg:mx-0">
+            <p className="mt-4 text-[17px] md:text-[22px] lg:text-[15px] text-gray-500 sm:mt-5 sm:max-w-4xl sm:mx-auto  lg:mx-0">
               Experience the ultimate in luxury and performance. Our premium vehicle selection offers comfort, style, and reliability for any journey you have planned.
             </p>
             <div className="mt-5 sm:flex sm:justify-center lg:justify-start ">
