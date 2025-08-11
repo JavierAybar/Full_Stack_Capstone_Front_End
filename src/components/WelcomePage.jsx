@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/mercedes-home.png';
+import image from '../assets/mercedes-home.webp';
 import Button from './Button.jsx';
 import RegisterModal from './RegistrationModal.jsx';
 import LoginModal from './LoginModal.jsx';

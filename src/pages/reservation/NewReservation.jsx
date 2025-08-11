@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
 import { addReservation } from '../../redux/reservation/reservSlice';
-import image from '../../assets/cars_parking.jpg';
+import image from '../../assets/cars_parking.webp';
 
 const AddReservationPage = () => {
   // Hooks and state

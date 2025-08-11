@@ -54,14 +54,14 @@ const VehicleDetails = () => {
         }}
         modules={[EffectCoverflow, Navigation]}
         className="swiper_container md:h-1/5 pb-md-5"
-        // style={{ height: '95%' }}
+      // style={{ height: '95%' }}
       >
         {vehicles.map((car) => (
-          <SwiperSlide className="" key={car.id} style={{ display: 'flex', justifyContent: 'center' }}>
-            <div className="shadow-l relative scale-75 card l:w-[42rem] w-[40rem] bg-base-100  text-center pt-0 mt-0" key={car.id}>
+          <SwiperSlide className="" key={car.id} style={{ display: 'flex', justifyContent: 'center', margin: '40px 0px' }}>
+            <div className="shadow-l relative scale-85 card  w-[40rem] bg-base-100  text-center pt-0 mt-0" key={car.id}>
               <Link className="flex flex-col items-center" to={`/vehicles/${car.id}`}>
-                <img src={car.image} alt={car.image} className="xl:h-[280px] z-1 h-[300px]" />
-                <figure className={`rounded-full w-[230px] top-20 h-[230px] absolute z-0 flex items-center ${getNextColor()}`} />
+                <img src={car.image} alt={car.name} className="z-10 w-auto max-w-[360px] object-contain h-[300px] xl:h-[280px]" />
+                <figure className={`rounded-full w-[260px] top-10 h-[260px] absolute z-0 flex items-center ${getNextColor()}`} />
                 <div className="card-body">
                   <h2 className="mb-0 text-2xl font-bold">
                     {car.name}

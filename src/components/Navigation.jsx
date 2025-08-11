@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import image from '../assets/mercedes-logo.png';
+import image from '../assets/mercedes-logo.webp';
 import styles from './Navigation.module.css';
 
 const Navigation = () => {

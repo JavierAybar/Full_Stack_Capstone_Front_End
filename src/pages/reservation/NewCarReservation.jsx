@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form';
 import { fetchVehicles } from '../../redux/reducers/vehiclesSlice';
 import { addReservation } from '../../redux/reservation/reservSlice';
 
-import image from '../../assets/mercedes-reservation.png';
+import image from '../../assets/cars_parking.webp';
 
 const AddReservationPage = () => {
   const { id } = useParams();
