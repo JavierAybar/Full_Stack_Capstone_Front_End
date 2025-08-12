@@ -7,6 +7,20 @@
   height: 100vh;
   background-color: #fffd;
   z-index: 999;
+
+  /* Animation */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.open {
+  transform: translateX(0);
 }
 
 .logoBox {
@@ -26,7 +40,7 @@
   padding: 0;
 }
 
-.nav .navItem a {
+.navItem a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
@@ -50,22 +64,20 @@
   height: 24px;
   margin-right: 8px;
   z-index: 999;
+  cursor: pointer;
+  user-select: none;
 }
 
-.iconBar {
-  width: 24px;
-  height: 24px;
-  position: fixed;
+.sideBarIconBox {
+  position: absolute;
   top: 24px;
   left: 24px;
+  z-index: 1000;
 }
 
 @media (min-width: 768px) {
   .sectionSidbar {
     width: 25%;
-    position: fixed;
-    top: 0;
-    left: 0;
   }
 }
 
