@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import image from '../assets/mercedes-logo.webp';
+import image from '../assets/rent-cars-logo.webp';
 import styles from './Navigation.module.css';
 
 const Navigation = () => {
