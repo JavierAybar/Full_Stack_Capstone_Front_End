@@ -1,5 +1,6 @@
 .sectionSidbar {
   width: 100%;
+  max-width: 430px;
   padding: 16px;
   margin: 0;
   border-right: #ddd 1px solid;
@@ -22,6 +23,11 @@
   transform: translateX(0);
 }
 
+@media (min-width: 540px) {
+  .sectionSidbar {
+    width: 25vw; 
+  }
+}
 .logoBox {
   display: flex;
   justify-content: center;
