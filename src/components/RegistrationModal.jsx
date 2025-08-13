@@ -50,7 +50,6 @@ const RegisterModal = ({ open, onOpenChange }) => {
             username, email, password, passwordConfirmation,
           }))
             .then((response) => {
-              // Check if the response status is 200
               if (response.type === 'auth/registerUser/fulfilled') {
                 toast.success("Registration successful!");
                 onOpenChange(false);
@@ -64,7 +63,10 @@ const RegisterModal = ({ open, onOpenChange }) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px] bg-white rounded-lg">
+      <DialogContent
+       className="sm:max-w-[425px] bg-white rounded-lg"
+       onInteractOutside={e => e.preventDefault()}
+       >
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-red-500">Register</DialogTitle>
           <DialogDescription>

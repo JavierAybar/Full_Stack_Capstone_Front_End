@@ -79,8 +79,8 @@ const StyledWrapper = styled.div`
 
    @media (min-width: 1024px) {
   button {
-    width: 135px;
-    height: 3.2rem;
+    width: 145px;
+    height: 3.7rem;
   }
 
   @media (min-width: 768px) {

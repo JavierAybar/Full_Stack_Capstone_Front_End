@@ -20,12 +20,13 @@ const navLinks = [
 const navItemClass = `
   ${styles.navItem}
   transition-all duration-200
-  hover:scale-105
+  hover:scale-110
   hover:shadow-md
   hover:bg-red-50
   hover:text-red-600
   rounded
   cursor-pointer
+  text-lg xl:text-xl 2xl:text-2xl
 `;
 
 const Navigation = () => {
@@ -52,7 +53,8 @@ const Navigation = () => {
             className={`
               ${styles.iconMed} ${styles.iconBar}
               transition-all duration-300
-              hover:scale-110 hover:text-red-500
+              text-3xl xl:text-4xl 2xl:text-5xl
+              hover:scale-125 hover:text-red-500
               hover:shadow-lg hover:shadow-red-200
               hover:animate-pulse
               cursor-pointer
@@ -68,8 +70,9 @@ const Navigation = () => {
             className={`
               ${styles.iconMed}
               transition-transform duration-200
+              text-3xl xl:text-4xl 2xl:text-5xl
               hover:rotate-180
-              hover:scale-110
+              hover:scale-125
               hover:text-red-500
               cursor-pointer
             `}
@@ -79,7 +82,7 @@ const Navigation = () => {
           <img 
             src={image} 
             alt="Rent cars logo"
-            className="pt-16 transition-transform duration-300 cursor-pointer hover:scale-110 hover:rotate-6"
+            className="w-32 pt-16 transition-transform duration-300 cursor-pointer xl:w-40 2xl:w-48 hover:scale-125 hover:rotate-6"
           />
         </div>
         <ul className={styles.nav}>

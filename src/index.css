@@ -34,11 +34,6 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (min-width: 1440px) {
-  html {
-    zoom: 1.5;
-  }
-}
 
 @media (min-width: 2560px) {
   html {

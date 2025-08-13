@@ -34,9 +34,7 @@ const AddReservationPage = () => {
     };
 
     dispatch(addReservation(formDataWithIds)).then(() => {
-      // Show a success toast message
       toast.success('Reservation added successfully!');
-      // Redirect to "My Reservations"
       navigate('/my-reservations');
     });
   };
@@ -55,7 +53,6 @@ const AddReservationPage = () => {
         </p>
         <div className="login-form-div">
           <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-            {/* City Input */}
             <label htmlFor="city" className="block mt-2 mb-2 text-sm font-medium text-gray-800 dark:text-back">
               Select your city
             </label>
@@ -69,7 +66,6 @@ const AddReservationPage = () => {
               className="w-full p-2 mb-2 text-gray-900 border rounded focus:outline-none focus:shadow-outline dark:text-gray-500 "
             />
 
-            {/* Date Input */}
             <label htmlFor="date" className="block mt-2 mb-2 text-sm font-medium text-gray-900 dark:text-back">
               Select a date
             </label>
@@ -91,7 +87,6 @@ const AddReservationPage = () => {
               />
             </div>
 
-            {/* Submit Button */}
             <button type="submit" className=" w-full mt-4 text-white bg-gradient-to-r from-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
               Book Reservation
             </button>

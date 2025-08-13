@@ -57,7 +57,7 @@ const Login = ({open, onOpenChange}) => {
 
     return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px] bg-white rounded-lg">
+      <DialogContent className="sm:max-w-[425px] bg-white rounded-lg" onInteractOutside={e => e.preventDefault()}>
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-red-500">Login</DialogTitle>
           <DialogDescription>
